@@ -10,6 +10,8 @@
 
 //Hello World - C# 소개 대화형 C# 자습서
 //https://learn.microsoft.com/ko-kr/dotnet/csharp/tour-of-csharp/tutorials/hello-world
+using System;
+
 Console.WriteLine("■■■■  첫 번째 C# 프로그램 실행  ■■■■");
 Console.WriteLine("Hello World!");
 
@@ -94,14 +96,51 @@ Console.WriteLine(c);   // 3
 
 Console.WriteLine("■■■■  연산 순서 알아보기  ■■■■");
 
-int a = 5;
-int b = 4;
-int c = 2;
-int d = a + b * c;
+a = 5;
+b = 4;
+c = 2;
+int d = a + b * c;                          // 13
 Console.WriteLine(d);
 
+a = 5;
+b = 4;
+c = 2;
+d = (a + b) * c;
+Console.WriteLine(d);                       // 18
+
+d = (a + b) - 6 * c + (12 * 4) / 3 + 12;    
+Console.WriteLine(d);                       // 25
+
+a = 7;
+b = 4;
+c = 3;
+d = (a + b) / c;
+Console.WriteLine(d);                       // 3
 
 
+Console.WriteLine("■■■■  정수 전체 자릿수 및 한도 살펴보기  ■■■■");
+
+a = 7;
+b = 4;
+c = 3;
+d = (a + b) / c;
+int e = (a + b) % c;
+Console.WriteLine($"quotient: {d}");        // 몫 3
+Console.WriteLine($"remainder: {e}");       // 나머지 2
+
+int max = int.MaxValue;
+int min = int.MinValue;
+Console.WriteLine($"The range of integers is {min} to {max}");
+
+int what = max + 3;
+Console.WriteLine($"An example of overflow: {what}");
+
+
+Console.WriteLine("■■■■  double 형식 작업  ■■■■");
+
+
+
+Console.WriteLine("■■■■  10진 형식으로 작업  ■■■■");
 
 
 
