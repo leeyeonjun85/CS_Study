@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -50,7 +51,7 @@ namespace Oracle_EFCore.Migrations
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
                     Name = table.Column<string>(type: "NVARCHAR2(20)", maxLength: 20, nullable: false),
-                    Age = table.Column<int>(type: "NUMBER(10)", nullable: false),
+                    Birthday = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
                     room_id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                 },
                 constraints: table =>

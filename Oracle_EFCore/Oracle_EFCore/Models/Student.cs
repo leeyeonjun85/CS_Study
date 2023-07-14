@@ -1,11 +1,6 @@
-﻿using DevExpress.Xpo;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Oracle_EFCore.Models
 {
@@ -17,10 +12,10 @@ namespace Oracle_EFCore.Models
 
         [Required]
         [MaxLength(20)]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [Required]
-        public int Age { get; set; }
+        public DateTime Birthday { get; set; } = DateTime.UtcNow;
 
         [Column("room_id")]
         public int RoomId { get; set; }

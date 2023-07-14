@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Oracle_EFCore.Properties;
 
 namespace Oracle_EFCore.Models;
@@ -13,6 +11,4 @@ public partial class ModelContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseOracle(Settings.Default.Oracle_Connection_String);
-
-    
 }

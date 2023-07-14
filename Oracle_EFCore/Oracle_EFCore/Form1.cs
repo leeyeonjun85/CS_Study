@@ -1,13 +1,7 @@
-﻿using Oracle_EFCore.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Oracle_EFCore.Models;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore;
 
 namespace Oracle_EFCore
 {
@@ -49,13 +43,14 @@ namespace Oracle_EFCore
                 context.Rooms?.Add(room2);
                 await context.SaveChangesAsync();
 
-                var student1 = new Student { RoomId = room1.Id, Name = "홍길동", Age = 267 };
-                var student2 = new Student { RoomId = room2.Id, Name = "이연준", Age = 38 };
-                var student3 = new Student { RoomId = room2.Id, Name = "윤석열", Age = 59 };
+                var student1 = new Student { RoomId = room1.Id, Name = "홍길동", Birthday = DateTime.Parse("1919-03-01") };
+                var student2 = new Student { RoomId = room2.Id, Name = "이연준", Birthday = DateTime.Parse("1985-07-17") };
+                var student3 = new Student { RoomId = room2.Id, Name = "윤석열", Birthday = DateTime.Parse("1960-06-10") };
                 context.Students?.AddRange(new Student[] { student1, student2, student3 });
                 await context.SaveChangesAsync();
 
                 textBox1.Text += $"{Environment.NewLine}저장완료";
+                gridControl1.Refresh();
             }
         }
 

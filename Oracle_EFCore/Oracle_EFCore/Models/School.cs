@@ -1,12 +1,7 @@
-﻿using DevExpress.Xpo;
-using DevExpress.XtraRichEdit.Model;
-using System;
+﻿using DevExpress.XtraRichEdit.Model;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Oracle_EFCore.Models
 {
