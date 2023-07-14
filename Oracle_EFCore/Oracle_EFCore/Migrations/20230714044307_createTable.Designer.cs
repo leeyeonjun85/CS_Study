@@ -12,7 +12,7 @@ using Oracle_EFCore.Models;
 namespace Oracle_EFCore.Migrations
 {
     [DbContext(typeof(ModelContext))]
-    [Migration("20230714044213_createTable")]
+    [Migration("20230714044307_createTable")]
     partial class createTable
     {
         /// <inheritdoc />

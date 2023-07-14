@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsForms_main", "Window
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLServer", "SQLServer\SQLServer.csproj", "{67DB9806-3A6F-44EE-86A7-6588982E8079}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore_MySQL", "EFCore_MySQL\EFCore_MySQL.csproj", "{CDAE12F2-4F21-4C9A-9261-3244D4962A1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{67DB9806-3A6F-44EE-86A7-6588982E8079}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67DB9806-3A6F-44EE-86A7-6588982E8079}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67DB9806-3A6F-44EE-86A7-6588982E8079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDAE12F2-4F21-4C9A-9261-3244D4962A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDAE12F2-4F21-4C9A-9261-3244D4962A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDAE12F2-4F21-4C9A-9261-3244D4962A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDAE12F2-4F21-4C9A-9261-3244D4962A1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

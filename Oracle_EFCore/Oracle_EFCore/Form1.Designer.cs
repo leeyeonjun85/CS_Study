@@ -33,6 +33,8 @@
             ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             btnConnect = new DevExpress.XtraBars.BarButtonItem();
             btnAddData = new DevExpress.XtraBars.BarButtonItem();
+            btnSelect = new DevExpress.XtraBars.BarButtonItem();
+            btnSave = new DevExpress.XtraBars.BarButtonItem();
             ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             textBox1 = new System.Windows.Forms.TextBox();
@@ -50,6 +52,7 @@
             layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            bindingSource1 = new System.Windows.Forms.BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)schoolsBindingSource).BeginInit();
@@ -63,16 +66,17 @@
             ((System.ComponentModel.ISupportInitialize)layoutControlItem2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // ribbonControl1
             // 
             ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 32, 35, 32);
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnConnect, btnAddData });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnConnect, btnAddData, btnSelect, btnSave });
             ribbonControl1.Location = new System.Drawing.Point(0, 0);
             ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            ribbonControl1.MaxItemId = 4;
+            ribbonControl1.MaxItemId = 6;
             ribbonControl1.Name = "ribbonControl1";
             ribbonControl1.OptionsMenuMinWidth = 385;
             ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPage1 });
@@ -96,6 +100,24 @@
             btnAddData.Name = "btnAddData";
             btnAddData.ItemClick += btnAddData_ItemClick;
             // 
+            // btnSelect
+            // 
+            btnSelect.Caption = "조회";
+            btnSelect.Id = 4;
+            btnSelect.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("btnSelect.ImageOptions.Image");
+            btnSelect.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("btnSelect.ImageOptions.LargeImage");
+            btnSelect.Name = "btnSelect";
+            btnSelect.ItemClick += btnSelect_ItemClick;
+            // 
+            // btnSave
+            // 
+            btnSave.Caption = "Save";
+            btnSave.Id = 5;
+            btnSave.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("btnSave.ImageOptions.Image");
+            btnSave.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("btnSave.ImageOptions.LargeImage");
+            btnSave.Name = "btnSave";
+            btnSave.ItemClick += btnSave_ItemClick;
+            // 
             // ribbonPage1
             // 
             ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup1 });
@@ -106,6 +128,8 @@
             // 
             ribbonPageGroup1.ItemLinks.Add(btnConnect);
             ribbonPageGroup1.ItemLinks.Add(btnAddData);
+            ribbonPageGroup1.ItemLinks.Add(btnSelect);
+            ribbonPageGroup1.ItemLinks.Add(btnSave);
             ribbonPageGroup1.Name = "ribbonPageGroup1";
             ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
@@ -133,7 +157,6 @@
             // schoolsBindingSource
             // 
             schoolsBindingSource.DataSource = typeof(Models.School);
-            schoolsBindingSource.ListChanged += schoolsBindingSource_ListChanged;
             // 
             // gridView1
             // 
@@ -261,6 +284,7 @@
             ((System.ComponentModel.ISupportInitialize)layoutControlItem2).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem3).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -286,7 +310,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colRooms;
         private DevExpress.XtraBars.BarButtonItem btnAddData;
+        private DevExpress.XtraBars.BarButtonItem btnSelect;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private DevExpress.XtraBars.BarButtonItem btnSave;
         private System.Windows.Forms.BindingSource schoolsBindingSource;
+        //private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }
 
