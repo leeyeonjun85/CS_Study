@@ -17,8 +17,8 @@ namespace CalculatorProgram
             while (!endApp)
             {
                 // Declare variables and set to empty.
-                string numInput1 = "";
-                string numInput2 = "";
+                string? numInput1 = "";
+                string? numInput2 = "";
                 double result = 0;
 
                 // Ask the user to type the first number.
@@ -51,11 +51,11 @@ namespace CalculatorProgram
                 Console.WriteLine("\td - 나누기(Divide)");
                 Console.Write("선택한 계산 : ");
 
-                string op = Console.ReadLine();
+                string? op = Console.ReadLine();
 
                 try
                 {
-                    result = calculator.DoOperation(cleanNum1, cleanNum2, op);
+                    result = calculator.DoOperation(cleanNum1, cleanNum2, op!);
                     if (double.IsNaN(result))
                     {
                         Console.WriteLine("잘못 된 계산식입니다.\n");

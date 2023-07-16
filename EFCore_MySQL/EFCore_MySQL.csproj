@@ -9,11 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MySql.Data" Version="8.0.33" />
-    <PackageReference Include="MySql.Data.EntityFramework" Version="8.0.33" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
