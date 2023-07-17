@@ -7,6 +7,8 @@
 Microsoft.EntityFrameworkCore.Tools
 Oracle.EntityFrameworkCore
 
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Install-Package Oracle.EntityFrameworkCore
 
 #### Model Migration
 ```PM
