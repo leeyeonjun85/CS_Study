@@ -10,8 +10,6 @@ namespace EFCore_Oracle
 {
     public partial class Form1 : Form
     {
-        getOracleDataTable getOracleDT;
-
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +21,7 @@ namespace EFCore_Oracle
             {
                 if (context.Database.CanConnect())
                 {
-                    getOracleDT = new getOracleDataTable(dataGridView1, textBox1);
+                    getOracleDataTable getOracleDT = new getOracleDataTable(dataGridView1, textBox1);
                     textBox1.Text += $"{Environment.NewLine}연결 성공{Environment.NewLine}{context.Database.GetConnectionString()}";
                 }
                 else
