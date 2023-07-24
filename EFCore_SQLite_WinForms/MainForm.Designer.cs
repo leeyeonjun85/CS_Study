@@ -29,140 +29,173 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            dataGridViewCategories = new DataGridView();
-            categoryIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            splitContainer1 = new SplitContainer();
+            lbInput = new Label();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            lbInfo = new Label();
+            dataGridView1 = new DataGridView();
+            studentIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            categoryBindingSource = new BindingSource(components);
-            dataGridViewProducts = new DataGridView();
-            productIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nameDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            categoryIdDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            categoryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            productsBindingSource = new BindingSource(components);
-            productBindingSource = new BindingSource(components);
-            buttonSave = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewCategories).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)categoryBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)productsBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)productBindingSource).BeginInit();
+            schoolIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            schoolDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            studentBindingSource = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)studentBindingSource).BeginInit();
             SuspendLayout();
             // 
-            // dataGridViewCategories
+            // splitContainer1
             // 
-            dataGridViewCategories.AutoGenerateColumns = false;
-            dataGridViewCategories.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCategories.Columns.AddRange(new DataGridViewColumn[] { categoryIdDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn });
-            dataGridViewCategories.DataSource = categoryBindingSource;
-            dataGridViewCategories.Location = new Point(12, 12);
-            dataGridViewCategories.Name = "dataGridViewCategories";
-            dataGridViewCategories.RowTemplate.Height = 25;
-            dataGridViewCategories.Size = new Size(305, 385);
-            dataGridViewCategories.TabIndex = 0;
-            dataGridViewCategories.SelectionChanged += dataGridViewCategories_SelectionChanged;
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
             // 
-            // categoryIdDataGridViewTextBoxColumn
+            // splitContainer1.Panel1
             // 
-            categoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryId";
-            categoryIdDataGridViewTextBoxColumn.HeaderText = "CategoryId";
-            categoryIdDataGridViewTextBoxColumn.Name = "categoryIdDataGridViewTextBoxColumn";
+            splitContainer1.Panel1.Controls.Add(lbInput);
+            splitContainer1.Panel1.Controls.Add(tabControl1);
+            splitContainer1.Panel1MinSize = 50;
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(lbInfo);
+            splitContainer1.Panel2.Controls.Add(dataGridView1);
+            splitContainer1.Panel2MinSize = 50;
+            splitContainer1.Size = new Size(800, 450);
+            splitContainer1.SplitterDistance = 400;
+            splitContainer1.TabIndex = 1;
+            // 
+            // lbInput
+            // 
+            lbInput.AutoSize = true;
+            lbInput.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbInput.Location = new Point(4, 9);
+            lbInput.Name = "lbInput";
+            lbInput.Size = new Size(80, 21);
+            lbInput.TabIndex = 0;
+            lbInput.Text = "정보 입력";
+            // 
+            // tabControl1
+            // 
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(0, 66);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(400, 384);
+            tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(392, 356);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(392, 356);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lbInfo
+            // 
+            lbInfo.AutoSize = true;
+            lbInfo.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbInfo.Location = new Point(3, 9);
+            lbInfo.Name = "lbInfo";
+            lbInfo.Size = new Size(80, 21);
+            lbInfo.TabIndex = 1;
+            lbInfo.Text = "정보 입력";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { studentIdDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, schoolIdDataGridViewTextBoxColumn, schoolDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = studentBindingSource;
+            dataGridView1.Location = new Point(0, 66);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(396, 384);
+            dataGridView1.TabIndex = 1;
+            // 
+            // studentIdDataGridViewTextBoxColumn
+            // 
+            studentIdDataGridViewTextBoxColumn.DataPropertyName = "studentId";
+            studentIdDataGridViewTextBoxColumn.HeaderText = "studentId";
+            studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
             // 
             // nameDataGridViewTextBoxColumn
             // 
-            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            nameDataGridViewTextBoxColumn.HeaderText = "name";
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // categoryBindingSource
+            // schoolIdDataGridViewTextBoxColumn
             // 
-            categoryBindingSource.DataSource = typeof(Category);
+            schoolIdDataGridViewTextBoxColumn.DataPropertyName = "schoolId";
+            schoolIdDataGridViewTextBoxColumn.HeaderText = "schoolId";
+            schoolIdDataGridViewTextBoxColumn.Name = "schoolIdDataGridViewTextBoxColumn";
             // 
-            // dataGridViewProducts
+            // schoolDataGridViewTextBoxColumn
             // 
-            dataGridViewProducts.AutoGenerateColumns = false;
-            dataGridViewProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProducts.Columns.AddRange(new DataGridViewColumn[] { productIdDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn1, categoryIdDataGridViewTextBoxColumn1, categoryDataGridViewTextBoxColumn });
-            dataGridViewProducts.DataSource = productsBindingSource;
-            dataGridViewProducts.Location = new Point(323, 12);
-            dataGridViewProducts.Name = "dataGridViewProducts";
-            dataGridViewProducts.RowTemplate.Height = 25;
-            dataGridViewProducts.Size = new Size(465, 385);
-            dataGridViewProducts.TabIndex = 1;
+            schoolDataGridViewTextBoxColumn.DataPropertyName = "school";
+            schoolDataGridViewTextBoxColumn.HeaderText = "school";
+            schoolDataGridViewTextBoxColumn.Name = "schoolDataGridViewTextBoxColumn";
             // 
-            // productIdDataGridViewTextBoxColumn
+            // studentBindingSource
             // 
-            productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
-            productIdDataGridViewTextBoxColumn.HeaderText = "ProductId";
-            productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            // 
-            // categoryIdDataGridViewTextBoxColumn1
-            // 
-            categoryIdDataGridViewTextBoxColumn1.DataPropertyName = "CategoryId";
-            categoryIdDataGridViewTextBoxColumn1.HeaderText = "CategoryId";
-            categoryIdDataGridViewTextBoxColumn1.Name = "categoryIdDataGridViewTextBoxColumn1";
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            categoryDataGridViewTextBoxColumn.HeaderText = "Category";
-            categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            // 
-            // productsBindingSource
-            // 
-            productsBindingSource.DataMember = "Products";
-            productsBindingSource.DataSource = categoryBindingSource;
-            // 
-            // productBindingSource
-            // 
-            productBindingSource.DataSource = typeof(Product);
-            // 
-            // buttonSave
-            // 
-            buttonSave.Location = new Point(713, 415);
-            buttonSave.Name = "buttonSave";
-            buttonSave.Size = new Size(75, 23);
-            buttonSave.TabIndex = 2;
-            buttonSave.Text = "Save";
-            buttonSave.UseVisualStyleBackColor = true;
-            buttonSave.Click += buttonSave_Click;
+            studentBindingSource.DataSource = typeof(Models.Student);
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(buttonSave);
-            Controls.Add(dataGridViewProducts);
-            Controls.Add(dataGridViewCategories);
+            Controls.Add(splitContainer1);
             Name = "MainForm";
-            Text = "Products and Categories";
-            ((System.ComponentModel.ISupportInitialize)dataGridViewCategories).EndInit();
-            ((System.ComponentModel.ISupportInitialize)categoryBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).EndInit();
-            ((System.ComponentModel.ISupportInitialize)productsBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)productBindingSource).EndInit();
+            Text = "Form1";
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel1.PerformLayout();
+            splitContainer1.Panel2.ResumeLayout(false);
+            splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)studentBindingSource).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridViewCategories;
-        private DataGridView dataGridViewProducts;
-        private Button buttonSave;
-        private DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
+        private SplitContainer splitContainer1;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private DataGridView dataGridView1;
+        private Label lbInput;
+        private Label lbInfo;
+        private DataGridViewTextBoxColumn studentIdDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private BindingSource categoryBindingSource;
-        private DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
-        private BindingSource productBindingSource;
-        private BindingSource productsBindingSource;
+        private DataGridViewTextBoxColumn schoolIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn schoolDataGridViewTextBoxColumn;
+        private BindingSource studentBindingSource;
     }
 }
