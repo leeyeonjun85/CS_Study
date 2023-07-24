@@ -18,7 +18,7 @@ namespace WindowsForms_main
 {
     public partial class Form1 : Form
     {
-        Class1 library1 = new Class1();
+        //Class1 library1 = new Class1();
         CancellationTokenSource tokenSource;
 
         public Form1()
@@ -47,27 +47,27 @@ namespace WindowsForms_main
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = library1.getFileDir();
+            //textBox1.Text = library1.getFileDir();
         }
 
         private void makeJson_Click(object sender, EventArgs e)
         {
-            var json_path = library1.makeJson();
-            textBox1.Text += $"\r\nJSON 생성 위치 : {json_path}";
+            //var json_path = library1.makeJson();
+            //textBox1.Text += $"\r\nJSON 생성 위치 : {json_path}";
         }
 
         private void loadJson_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = library1.GetDataTable();
-            dataGridView1.DataSource = dataTable;
+            //DataTable dataTable = library1.GetDataTable();
+            //dataGridView1.DataSource = dataTable;
         }
 
         private void chart_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = library1.GetDataTable();
+            //DataTable dataTable = library1.GetDataTable();
 
             // Bind the DataTable to the chart
-            chart1.DataSource = dataTable;
+            //chart1.DataSource = dataTable;
 
             //차트 초기화
             chart1.Series.Clear();

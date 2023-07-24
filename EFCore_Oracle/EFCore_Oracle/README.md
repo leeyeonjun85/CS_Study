@@ -21,7 +21,7 @@ update-database
 Scaffold-DbContext "User Id=testuser1;Password=0330;Data Source=localhost:1521/XEPDB1;" Oracle.EntityFrameworkCore -OutputDir Models
 ```
 
-
+User Id=testuser1;Password=0330;Data Source=localhost:1521/XEPDB1;
 
 #### References
 - [Oracle Entity Framework (EF) Core 6 Demo](https://www.youtube.com/watch?v=iyHDODskDlk)

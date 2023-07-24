@@ -39,6 +39,20 @@ https://learn.microsoft.com/ko-kr/dotnet/csharp/tour-of-csharp/tutorials/branche
 ### 일반 목록 형식을 사용하여 데이터 컬렉션을 관리하는 방법 알아보기
 https://learn.microsoft.com/ko-kr/dotnet/csharp/tour-of-csharp/tutorials/list-collection
 
+## EFCore_SQLite_WinForms
+### Windows Forms 시작
+https://learn.microsoft.com/ko-kr/ef/core/get-started/winforms
+#### 패키지 관리자 콘솔
+- Install-Package Microsoft.EntityFrameworkCore.Sqlite
+
+
+
+
+의존성 주입
+https://learn.microsoft.com/ko-kr/dotnet/core/extensions/dependency-injection-guidelines
+Install-Package Microsoft.Extensions.Hosting
+Install-Package Microsoft.EntityFrameworkCore.Sqlite
+Install-Package Oracle.EntityFrameworkCore
 
 
 - [Visual Studio 자습서 C#](https://learn.microsoft.com/ko-kr/visualstudio/get-started/csharp/?view=vs-2022)
