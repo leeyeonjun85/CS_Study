@@ -11,12 +11,10 @@ namespace EFCore_SQLite_WinForms
         public MainForm()
         {
             InitializeComponent();
-            context = new ModelContext(_connectionString);
+            context = new ModelContext();
 
             Load += MainForm_Load!;
         }
-
-        
 
         private void MainForm_Load(object sender, EventArgs e)
         {

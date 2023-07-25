@@ -24,7 +24,6 @@ https://learn.microsoft.com/ko-kr/visualstudio/get-started/csharp/tutorial-conso
 
 
 
-
 ## CS_Study
 
 ### Hello World - C# 소개 대화형 C# 자습서
@@ -44,6 +43,9 @@ https://learn.microsoft.com/ko-kr/dotnet/csharp/tour-of-csharp/tutorials/list-co
 https://learn.microsoft.com/ko-kr/ef/core/get-started/winforms
 #### 패키지 관리자 콘솔
 - Install-Package Microsoft.EntityFrameworkCore.Sqlite
+
+
+
 
 
 

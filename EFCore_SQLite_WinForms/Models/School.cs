@@ -1,7 +1,10 @@
-﻿namespace EFCore_SQLite_WinForms.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EFCore_SQLite_WinForms.Models
 {
     public class School
     {
+        [Key]
         public int schoolId { get; set; }
 
         public string? name { get; set; }
