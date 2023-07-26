@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore_MVC", "EFCore_MVC\EF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DX1", "DX1\DX1.csproj", "{2C40FD54-7EC2-4D9C-B41E-16F496BAE5CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logConsole", "logConsole\logConsole.csproj", "{3AFC6BA6-EC3C-4A07-88D9-341A87A995D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{2C40FD54-7EC2-4D9C-B41E-16F496BAE5CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C40FD54-7EC2-4D9C-B41E-16F496BAE5CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C40FD54-7EC2-4D9C-B41E-16F496BAE5CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AFC6BA6-EC3C-4A07-88D9-341A87A995D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AFC6BA6-EC3C-4A07-88D9-341A87A995D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AFC6BA6-EC3C-4A07-88D9-341A87A995D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AFC6BA6-EC3C-4A07-88D9-341A87A995D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
