@@ -27,7 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore_MVC", "EFCore_MVC\EF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DX1", "DX1\DX1.csproj", "{2C40FD54-7EC2-4D9C-B41E-16F496BAE5CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logConsole", "logConsole\logConsole.csproj", "{3AFC6BA6-EC3C-4A07-88D9-341A87A995D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "logConsole", "logConsole\logConsole.csproj", "{3AFC6BA6-EC3C-4A07-88D9-341A87A995D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{B4F0EB98-E699-47ED-91CA-875892F6BA10}"
+	ProjectSection(SolutionItems) = preProject
+		CS_Study\README.md = CS_Study\README.md
+		TextFile1.txt = TextFile1.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

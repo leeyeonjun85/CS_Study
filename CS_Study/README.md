@@ -8,10 +8,14 @@
 - 변수이름변경 : Ctrl+RR
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 ## Reference
 - [Visual Studio 자습서 C#](https://learn.microsoft.com/ko-kr/visualstudio/get-started/csharp/?view=vs-2022)
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 ## Calcuator
@@ -22,6 +26,7 @@ https://learn.microsoft.com/ko-kr/visualstudio/get-started/csharp/tutorial-conso
 https://learn.microsoft.com/ko-kr/visualstudio/get-started/csharp/tutorial-console-part-2?view=vs-2022
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 ## CS_Study
@@ -38,6 +43,29 @@ https://learn.microsoft.com/ko-kr/dotnet/csharp/tour-of-csharp/tutorials/branche
 ### 일반 목록 형식을 사용하여 데이터 컬렉션을 관리하는 방법 알아보기
 https://learn.microsoft.com/ko-kr/dotnet/csharp/tour-of-csharp/tutorials/list-collection
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+## EFCore_MVC
+### C# Entity Framework6(EF6) 강의 7편 (Repository Pattern, DI)
+https://www.youtube.com/watch?v=NM-bqkmrac4&list=PLlrfTSXS0LLKYjSrTuGlvB4mPd3vv8t4f&index=10
+https://github.com/KaburiCoder/EF6Basic
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+## EFCore_MySQL
+### C# Entity Framework6(EF6) 강의 4편(CREATE) 데이터 삽입
+https://www.youtube.com/watch?v=RMuPZ6omO2U&list=PLlrfTSXS0LLKYjSrTuGlvB4mPd3vv8t4f&index=6
+
+Install-Package MySql.EntityFrameworkCore
+
+
+
+
+
 ## EFCore_SQLite_WinForms
 ### Windows Forms 시작
 https://learn.microsoft.com/ko-kr/ef/core/get-started/winforms
@@ -46,6 +74,14 @@ https://learn.microsoft.com/ko-kr/ef/core/get-started/winforms
 
 
 
+
+
+
+
+
+## Names
+### 자습서: .NET을 사용하여 새 WPF 앱 만들기
+https://learn.microsoft.com/ko-kr/dotnet/desktop/wpf/get-started/create-app-visual-studio?view=netdesktop-7.0
 
 
 

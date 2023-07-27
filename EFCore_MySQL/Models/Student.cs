@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Oracle_EFCore.Models
@@ -7,20 +6,17 @@ namespace Oracle_EFCore.Models
     [Table("student")]
     public class Student
     {
-        [System.ComponentModel.DataAnnotations.Key]
+        [Key]
         public int Id { get; set; }
 
         [Required]
         [MaxLength(20)]
         public string Name { get; set; } = string.Empty;
 
-        [Required]
-        public DateTime Birthday { get; set; } = DateTime.UtcNow;
+        [Column("school_id")]
+        public int SchoolId { get; set; }
 
-        [Column("room_id")]
-        public int RoomId { get; set; }
-
-        [ForeignKey("RoomId")]
-        public virtual Room? Room { get; set; }
+        [ForeignKey("SchoolId")]
+        public virtual School? School { get; set; }
     }
 }
