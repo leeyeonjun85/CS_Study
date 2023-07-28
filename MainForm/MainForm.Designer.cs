@@ -30,10 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
-            productBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            priceDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            productBindingSource = new BindingSource(components);
+            btnAdd = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productBindingSource).BeginInit();
             SuspendLayout();
@@ -42,17 +42,13 @@
             // 
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, priceDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn });
             dataGridView1.DataSource = productBindingSource;
             dataGridView1.Location = new Point(137, 70);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(479, 284);
             dataGridView1.TabIndex = 0;
-            // 
-            // productBindingSource
-            // 
-            productBindingSource.DataSource = typeof(Product);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -66,17 +62,26 @@
             nameDataGridViewTextBoxColumn.HeaderText = "Name";
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // priceDataGridViewTextBoxColumn
+            // productBindingSource
             // 
-            priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            productBindingSource.DataSource = typeof(Products);
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(12, 39);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(75, 23);
+            btnAdd.TabIndex = 1;
+            btnAdd.Text = "추가";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnAdd);
             Controls.Add(dataGridView1);
             Name = "MainForm";
             Text = "Form1";
@@ -92,5 +97,6 @@
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private BindingSource productBindingSource;
+        private Button btnAdd;
     }
 }

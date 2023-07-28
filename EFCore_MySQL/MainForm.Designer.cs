@@ -1,6 +1,6 @@
 ﻿namespace EFCore_MySQL
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -36,13 +36,8 @@
             btnConnect = new Button();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            schoolIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            schoolDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             studentBindingSource = new BindingSource(components);
-            textBox1 = new TextBox();
-            comboBox1 = new ComboBox();
+            tbName = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)studentBindingSource).BeginInit();
@@ -53,9 +48,9 @@
             lblStatus.AutoSize = true;
             lblStatus.Location = new Point(12, 77);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(70, 15);
+            lblStatus.Size = new Size(78, 15);
             lblStatus.TabIndex = 1;
-            lblStatus.Text = "연결 상태 : ";
+            lblStatus.Text = "상태 : 대기중";
             // 
             // btnSave
             // 
@@ -75,6 +70,7 @@
             btnUpdate.TabIndex = 5;
             btnUpdate.Text = "수정";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnDelete
             // 
@@ -84,6 +80,7 @@
             btnDelete.TabIndex = 6;
             btnDelete.Text = "삭제";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnConnect
             // 
@@ -106,10 +103,7 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, schoolIdDataGridViewTextBoxColumn, schoolDataGridViewTextBoxColumn });
-            dataGridView1.DataSource = studentBindingSource;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
@@ -117,63 +111,30 @@
             dataGridView1.Size = new Size(443, 338);
             dataGridView1.TabIndex = 0;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // schoolIdDataGridViewTextBoxColumn
-            // 
-            schoolIdDataGridViewTextBoxColumn.DataPropertyName = "SchoolId";
-            schoolIdDataGridViewTextBoxColumn.HeaderText = "SchoolId";
-            schoolIdDataGridViewTextBoxColumn.Name = "schoolIdDataGridViewTextBoxColumn";
-            // 
-            // schoolDataGridViewTextBoxColumn
-            // 
-            schoolDataGridViewTextBoxColumn.DataPropertyName = "School";
-            schoolDataGridViewTextBoxColumn.HeaderText = "School";
-            schoolDataGridViewTextBoxColumn.Name = "schoolDataGridViewTextBoxColumn";
-            // 
             // studentBindingSource
             // 
-            studentBindingSource.DataSource = typeof(Oracle_EFCore.Models.Student);
+            studentBindingSource.DataSource = typeof(EFCore_MySQL.Models.Student);
             // 
-            // textBox1
+            // tbName
             // 
-            textBox1.Location = new Point(12, 124);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(142, 23);
-            textBox1.TabIndex = 8;
+            tbName.Location = new Point(12, 124);
+            tbName.Name = "tbName";
+            tbName.Size = new Size(142, 23);
+            tbName.TabIndex = 8;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 95);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(142, 23);
-            comboBox1.TabIndex = 9;
-            // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(615, 362);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox1);
+            Controls.Add(tbName);
             Controls.Add(panel1);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
             Controls.Add(btnSave);
             Controls.Add(btnConnect);
             Controls.Add(lblStatus);
-            Name = "Form1";
+            Name = "MainForm";
             Text = "Form1";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -190,12 +151,7 @@
         private Button btnConnect;
         private Panel panel1;
         private DataGridView dataGridView1;
-        private TextBox textBox1;
-        private ComboBox comboBox1;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn schoolIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn schoolDataGridViewTextBoxColumn;
+        private TextBox tbName;
         private BindingSource studentBindingSource;
     }
 }

@@ -1,17 +1,30 @@
+using EFCore_MySQL.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+
 namespace EFCore_MySQL
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            //Application.Run(new Form1());
+
+            // Service Add
+            var services = new ServiceCollection()
+                                .AddSingleton<MainForm>()
+                                .AddLogging(builder =>
+                                {
+                                    builder.AddDebug();
+                                    builder.AddFile($"logs{Path.DirectorySeparatorChar}LogText.txt");
+                                })
+                                .AddDbContext<ModelContext>()
+                                .BuildServiceProvider()
+                                .GetRequiredService<MainForm>();
+            Application.Run(services);
         }
     }
 }

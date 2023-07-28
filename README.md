@@ -1,28 +1,28 @@
-ï»¿
 
-- ì£¼ì„ ì¶”ê°€ : Ctrl+KC
-- ì£¼ì„ ì œê±° : Ctrl+KU
-- ì†”ë£¨ì…˜ ì°½ ì—´ê¸° : Ctrl+Alt+L
-- Tool Window ì „í™˜ : Shift+Alt+F6
-- ì±…ê°ˆí”¼ : Ctrl+KK
-- ë³€ìˆ˜ì´ë¦„ë³€ê²½ : Ctrl+RR
+
+- ÁÖ¼® Ãß°¡ : Ctrl+KC
+- ÁÖ¼® Á¦°Å : Ctrl+KU
+- ¼Ö·ç¼Ç Ã¢ ¿­±â : Ctrl+Alt+L
+- Tool Window ÀüÈ¯ : Shift+Alt+F6
+- Ã¥°¥ÇÇ : Ctrl+KK
+- º¯¼öÀÌ¸§º¯°æ : Ctrl+RR
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 ## Reference
-- [Visual Studio ììŠµì„œ C#](https://learn.microsoft.com/ko-kr/visualstudio/get-started/csharp/?view=vs-2022)
+- [Visual Studio ÀÚ½À¼­ C#](https://learn.microsoft.com/ko-kr/visualstudio/get-started/csharp/?view=vs-2022)
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 ## Calcuator
-### ììŠµì„œ: Visual Studioì—ì„œ ê°„ë‹¨í•œ C# ì½˜ì†” ì•± ë§Œë“¤ê¸°(1/2ë¶€)
+### ÀÚ½À¼­: Visual Studio¿¡¼­ °£´ÜÇÑ C# ÄÜ¼Ö ¾Û ¸¸µé±â(1/2ºÎ)
 https://learn.microsoft.com/ko-kr/visualstudio/get-started/csharp/tutorial-console?view=vs-2022
 
-### ììŠµì„œ: C# ì½˜ì†” ì•± í™•ì¥ ë° Visual Studioì—ì„œ ë””ë²„ê·¸(2/2ë¶€)
+### ÀÚ½À¼­: C# ÄÜ¼Ö ¾Û È®Àå ¹× Visual Studio¿¡¼­ µğ¹ö±×(2/2ºÎ)
 https://learn.microsoft.com/ko-kr/visualstudio/get-started/csharp/tutorial-console-part-2?view=vs-2022
 
 
@@ -31,16 +31,16 @@ https://learn.microsoft.com/ko-kr/visualstudio/get-started/csharp/tutorial-conso
 
 ## CS_Study
 
-### Hello World - C# ì†Œê°œ ëŒ€í™”í˜• C# ììŠµì„œ
+### Hello World - C# ¼Ò°³ ´ëÈ­Çü C# ÀÚ½À¼­
 https://learn.microsoft.com/ko-kr/dotnet/csharp/tour-of-csharp/tutorials/hello-world
 
-### C#ì—ì„œ ì •ìˆ˜ ë° ë¶€ë™ ì†Œìˆ˜ì  ìˆ˜ ì¡°ì‘
+### C#¿¡¼­ Á¤¼ö ¹× ºÎµ¿ ¼Ò¼öÁ¡ ¼ö Á¶ÀÛ
 https://learn.microsoft.com/ko-kr/dotnet/csharp/tour-of-csharp/tutorials/numbers-in-csharp
 
-### ë¶„ê¸° ë° ë£¨í”„ ë¬¸ì´ í¬í•¨ëœ ì¡°ê±´ë¶€ ë…¼ë¦¬ ì•Œì•„ë³´ê¸°
+### ºĞ±â ¹× ·çÇÁ ¹®ÀÌ Æ÷ÇÔµÈ Á¶°ÇºÎ ³í¸® ¾Ë¾Æº¸±â
 https://learn.microsoft.com/ko-kr/dotnet/csharp/tour-of-csharp/tutorials/branches-and-loops
 
-### ì¼ë°˜ ëª©ë¡ í˜•ì‹ì„ ì‚¬ìš©í•˜ì—¬ ë°ì´í„° ì»¬ë ‰ì…˜ì„ ê´€ë¦¬í•˜ëŠ” ë°©ë²• ì•Œì•„ë³´ê¸°
+### ÀÏ¹İ ¸ñ·Ï Çü½ÄÀ» »ç¿ëÇÏ¿© µ¥ÀÌÅÍ ÄÃ·º¼ÇÀ» °ü¸®ÇÏ´Â ¹æ¹ı ¾Ë¾Æº¸±â
 https://learn.microsoft.com/ko-kr/dotnet/csharp/tour-of-csharp/tutorials/list-collection
 
 
@@ -48,7 +48,7 @@ https://learn.microsoft.com/ko-kr/dotnet/csharp/tour-of-csharp/tutorials/list-co
 
 
 ## EFCore_MVC
-### C# Entity Framework6(EF6) ê°•ì˜ 7í¸ (Repository Pattern, DI)
+### C# Entity Framework6(EF6) °­ÀÇ 7Æí (Repository Pattern, DI)
 https://www.youtube.com/watch?v=NM-bqkmrac4&list=PLlrfTSXS0LLKYjSrTuGlvB4mPd3vv8t4f&index=10
 https://github.com/KaburiCoder/EF6Basic
 
@@ -57,10 +57,16 @@ https://github.com/KaburiCoder/EF6Basic
 
 
 ## EFCore_MySQL
-### C# Entity Framework6(EF6) ê°•ì˜ 4í¸(CREATE) ë°ì´í„° ì‚½ì…
+### C# Entity Framework6(EF6) °­ÀÇ 4Æí(CREATE) µ¥ÀÌÅÍ »ğÀÔ
 https://www.youtube.com/watch?v=RMuPZ6omO2U&list=PLlrfTSXS0LLKYjSrTuGlvB4mPd3vv8t4f&index=6
 
 Install-Package MySql.EntityFrameworkCore
+
+### ·Î±×
+Install-Package Microsoft.Extensions.Logging.Debug
+Install-Package Serilog.Extensions.Logging.File
+
+
 
 
 ////
@@ -68,26 +74,25 @@ Install-Package MySql.EntityFrameworkCore
 
 ## EFCore_SQLServer
 - [Getting Started with Entity Framework Core [1 of 5]](https://learn.microsoft.com/en-us/shows/entity-framework-core-101/getting-started-with-entity-framework-core)
-- [Entity Framework Core ì‹œì‘(1/5)](https://kaki104.tistory.com/678)
-- [Entity Framework Coreë¥¼ ì‚¬ìš©í•˜ì—¬ ê´€ê³„í˜• ë°ì´í„° ìœ ì§€ ë° ê²€ìƒ‰](https://learn.microsoft.com/ko-kr/training/modules/persist-data-ef-core/?WT.mc_id=DT-MVP-5000651)
+- [Entity Framework Core ½ÃÀÛ(1/5)](https://kaki104.tistory.com/678)
+- [Entity Framework Core¸¦ »ç¿ëÇÏ¿© °ü°èÇü µ¥ÀÌÅÍ À¯Áö ¹× °Ë»ö](https://learn.microsoft.com/ko-kr/training/modules/persist-data-ef-core/?WT.mc_id=DT-MVP-5000651)
 
 ### Visual Studio Installer
-- ì¶”ê°€ ì„¤ì¹˜
+- Ãß°¡ ¼³Ä¡
 - Data Storage and Processing workload
-    - ë°ì´í„° ìŠ¤í† ë¦¬ì§€ ë° ì²˜ë¦¬
+    - µ¥ÀÌÅÍ ½ºÅä¸®Áö ¹× Ã³¸®
 - ASP.NET and web development workload
-    - ASP.NET ë° ì›¹ ê°œë°œ
+    - ASP.NET ¹× À¥ °³¹ß
 
-### NuGet package ì„¤ì¹˜
+### NuGet package ¼³Ä¡
 Install-Package Microsoft.EntityFrameworkCore.SqlServer
 Install-Package Microsoft.EntityFrameworkCore.Design
 Install-Package Microsoft.EntityFrameworkCore.Tools
 
+### Models Æú´õ Ãß°¡
+- Models Æú´õ¿¡ Product, Customer, Order, ProductOrder, SQLServerContext Å¬·¡½º Ãß°¡
 
-### Models í´ë” ì¶”ê°€
-- Models í´ë”ì— Product, Customer, Order, ProductOrder í´ë˜ìŠ¤ ì¶”ê°€
-
-    - Product.cs
+- Product.cs
 ```cs
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
@@ -108,7 +113,7 @@ namespace SQLServer.Models
 
 ```
 
-    - Customer.cs
+- Customer.cs
 ```cs
 namespace SQLServer.Models
 {
@@ -126,7 +131,7 @@ namespace SQLServer.Models
 }
 ```
 
-    - Order.cs
+- Order.cs
 ```cs
 namespace SQLServer.Models
 {
@@ -143,7 +148,7 @@ namespace SQLServer.Models
 }
 ```
 
-    - ProductOrder.cs
+- ProductOrder.cs
 ```cs
 namespace SQLServer.Models
 {
@@ -160,9 +165,7 @@ namespace SQLServer.Models
 }
 ```
 
-
-### Data í´ë” ì¶”ê°€
-- ContosoPetsContext.cs
+- SQLServerContext.cs
 ```cs
 using Microsoft.EntityFrameworkCore;
 using SQLServer.Models;
@@ -178,7 +181,6 @@ namespace SQLServer.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //ì…ˆí”Œì´ê¸° ë•Œë¬¸ì— ì—¬ê¸°ì— connection stringì„ ì…ë ¥
             optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=TestDB;Integrated Security=true");
         }
     }
@@ -186,13 +188,12 @@ namespace SQLServer.Data
 
 ```
 
-
 ### Package Manager Console
 ```bash
-# ëª¨ë¸ ìƒì„±
+# ¸ğµ¨ »ı¼º
 Add-Migration InitialCreate
 
-# ë§ˆì´ê·¸ë ˆì´ì…˜ ì‹¤í–‰
+# ¸¶ÀÌ±×·¹ÀÌ¼Ç ½ÇÇà
 Update-Database
 ```
 
@@ -220,19 +221,19 @@ Update-Database
 
 
 ## Names
-### ììŠµì„œ: .NETì„ ì‚¬ìš©í•˜ì—¬ ìƒˆ WPF ì•± ë§Œë“¤ê¸°
+### ÀÚ½À¼­: .NETÀ» »ç¿ëÇÏ¿© »õ WPF ¾Û ¸¸µé±â
 https://learn.microsoft.com/ko-kr/dotnet/desktop/wpf/get-started/create-app-visual-studio?view=netdesktop-7.0
 
 
 
 
-ì˜ì¡´ì„± ì£¼ì…
+ÀÇÁ¸¼º ÁÖÀÔ
 https://learn.microsoft.com/ko-kr/dotnet/core/extensions/dependency-injection-guidelines
 Install-Package Microsoft.Extensions.Hosting
 Install-Package Microsoft.EntityFrameworkCore.Sqlite
 Install-Package Oracle.EntityFrameworkCore
 
 
-- [Visual Studio ììŠµì„œ C#](https://learn.microsoft.com/ko-kr/visualstudio/get-started/csharp/?view=vs-2022)
-- [ììŠµì„œ: Visual Studioë¥¼ ì‚¬ìš©í•˜ì—¬ .NET ì½˜ì†” ì• í”Œë¦¬ì¼€ì´ì…˜ ë§Œë“¤ê¸°](https://learn.microsoft.com/ko-kr/dotnet/core/tutorials/with-visual-studio?pivots=dotnet-7-0)
+- [Visual Studio ÀÚ½À¼­ C#](https://learn.microsoft.com/ko-kr/visualstudio/get-started/csharp/?view=vs-2022)
+- [ÀÚ½À¼­: Visual Studio¸¦ »ç¿ëÇÏ¿© .NET ÄÜ¼Ö ¾ÖÇÃ¸®ÄÉÀÌ¼Ç ¸¸µé±â](https://learn.microsoft.com/ko-kr/dotnet/core/tutorials/with-visual-studio?pivots=dotnet-7-0)
 

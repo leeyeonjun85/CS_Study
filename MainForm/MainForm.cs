@@ -1,16 +1,19 @@
+using MainForm;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Windows.Forms;
 
 namespace MainForm
 {
     public partial class MainForm : Form
     {
-        private readonly IProductService _context;
+        private readonly ApplicationDbContext _context;
         private readonly IDbContextFactory<ApplicationDbContext> _contextFactory;
 
 
-        public MainForm(IProductService context)
+        public MainForm(ApplicationDbContext context)
         {
             _context = context;
             InitializeComponent();
@@ -24,20 +27,35 @@ namespace MainForm
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // Load products and display them in the UI (GridView, ListBox, etc.)
-            var products = _context.GetAllProducts();
-            dataGridView1.DataSource = products;
-            // Populate your UI elements with the product data
+            //Load products and display them in the UI(GridView, ListBox, etc.)
+            //var products = _context.GetAllProducts();
+            //dataGridView1.DataSource = products;
+            //Populate your UI elements with the product data
+
+            _context.Database.EnsureCreated();
+            _context.Products.Load();
+            dataGridView1.DataSource = _context.Products.Local.ToBindingList();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var addData = new Products
+            {
+                Name = "¿Ãø¨¡ÿ",
+            };
+
+            _context.Products.Add(addData);
+            _context.SaveChanges();
         }
     }
 
-    
 
-    public interface IProductService
+    [Table("Products")]
+    public class Products
     {
-        List<Product> GetAllProducts();
-
-        void Open(); void Close();
+        [Key]
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 
     public class ApplicationDbContext : DbContext
@@ -46,7 +64,14 @@ namespace MainForm
         {
         }
 
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Products> Products { get; set; }
+    }
+
+    public interface IProductService
+    {
+        List<Products> GetAllProducts();
+
+        void Open(); void Close();
     }
 
     public class ProductService : IProductService
@@ -58,7 +83,7 @@ namespace MainForm
             _dbContext = dbContext;
         }
 
-        public List<Product> GetAllProducts()
+        public List<Products> GetAllProducts()
         {
             return _dbContext.Products.ToList();
         }

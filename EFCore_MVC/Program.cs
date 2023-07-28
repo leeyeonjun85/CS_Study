@@ -4,6 +4,8 @@ using EF6Basic.Database;
 using EF6Basic.Repositories;
 using EF6Basic.Views;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Serilog.Core;
 
 namespace EFCore_MVC
 {
@@ -28,6 +30,7 @@ namespace EFCore_MVC
                 IMain mainView = new MainView();
                 var controller = provider.GetRequiredService<MainController>();
                 controller.SetView(mainView);
+                
                 return mainView;
             });
 
