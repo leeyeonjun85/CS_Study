@@ -18,7 +18,7 @@ namespace EFCore_First
 
             public BloggingContext()
             {
-                var path = "D:/CS_coding/CS_Study/EFCore_SQLite";
+                var path = "D:/coding/CS_Study/EFCore_SQLite";
                 DbPath = System.IO.Path.Join(path, "blogging.db");
             }
 
