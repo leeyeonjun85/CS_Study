@@ -399,6 +399,10 @@ foreach (var item in fibonacciNumbers)
 }
 
 
+Console.WriteLine($"{123}, {"최강기아"}");
+Console.WriteLine($"{123,-10:D5}, {"최강기아",20}");
+
+
 Console.ReadKey();
 
 
