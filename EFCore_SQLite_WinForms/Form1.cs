@@ -9,14 +9,16 @@ public partial class Form1 : Form
 {
     private readonly ILogger? _logger;
     private readonly ModelContext? _context;
+    private readonly IDataControl _DataControl;
 
     private int updateId { get; set; }
 
-    public Form1(ILogger<Form1> logger, ModelContext context)
+    public Form1(ILogger<Form1> logger, ModelContext context, IDataControl DataControl)
     {
         InitializeComponent();
         _logger = logger;
         _context = context!;
+        _DataControl = DataControl;
 
         dataGridView1.ReadOnly = true;
         dataGridView1.AllowUserToAddRows = false;
@@ -36,50 +38,6 @@ public partial class Form1 : Form
             cmbSchool.DataSource = _context?.schools.Select(p => p.name).ToList();
 
             _logger?.Log(LogLevel.Information, $"프로그램이 시작되었습니다.");
-
-
-
-
-            //// DataSource에 LINQ로 List를 입력하는 방식
-            //dataGridView1.DataSource = new BindingList<Student>();
-            //_context.Database.EnsureCreated();
-
-            //var query = from sc in _context.schools
-            //            join st in _context.students
-            //              on sc.id equals st.schoolId
-            //            select new
-            //            {
-            //                ID = st.id,
-            //                Name = st.name,
-            //                School = sc.name
-            //            };
-
-            //var values = query.ToList();
-            //dataGridView1.DataSource = values;
-
-
-
-
-            //// DataSource에 BindingList를 만들어 입력하는 방식
-            //var query = from sc in _context.schools
-            //            select new { sc.id, sc.name };
-            //var idSchoolList = query.ToList();
-
-            //BindingList<SchoolStudent> dataSourceBindingList = new BindingList<SchoolStudent>();
-
-            //_context.students.Load();
-            //var forDataSource = _context.students.Local.ToBindingList();
-            //foreach (var item in forDataSource)
-            //{
-            //    foreach (var sc in idSchoolList)
-            //    {
-            //        if (item.schoolId == sc.id)
-            //        {
-            //            dataSourceBindingList.Add(new SchoolStudent { studentId = item.id, studentName = item.name, schoolName = sc.name });
-            //        }
-            //    }
-            //}
-            //dataGridView1.DataSource = dataSourceBindingList;
         }
         catch (Exception ex)
         {
@@ -107,34 +65,7 @@ public partial class Form1 : Form
 
     private void btnAdd_Click(object sender, EventArgs e)
     {
-        try
-        {
-            int addSchoolId = 1;
-            var query = from sc in _context?.schools
-                        select new { ID = sc.id, NAME = sc.name };
-            var schoolList = query.ToList();
-
-            foreach (var s in schoolList)
-            {
-                if (s.NAME == cmbSchool.Text) addSchoolId = s.ID;
-            }
-
-            var addData = new Student
-            {
-                name = tbName.Text,
-                schoolId = addSchoolId
-            };
-
-            _context?.students.Add(addData);
-            _context?.SaveChanges();
-            _logger?.Log(LogLevel.Information, $"학생 추가 : {tbName.Text}");
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show(ex.Message);
-            _logger?.Log(LogLevel.Error, ex.Message);
-            throw;
-        }
+        _DataControl.DataAdd(_logger!, _context!, cmbSchool, tbName);
     }
 
     private void btnUpdate_Click(object sender, EventArgs e)
