@@ -1,0 +1,189 @@
+items:
+- name: Windows Forms for .NET
+  href: index.yml
+- name: What's new
+  items:
+  - name: What's new in .NET 7.0
+    href: whats-new/net70.md
+  - name: What's new in .NET 6.0
+    href: whats-new/net60.md
+  - name: What's new in .NET 5.0
+    href: whats-new/net50.md
+- name: Get started
+  items:
+  - name: Overview
+    href: overview/index.md
+  - name: Create an app
+    href: get-started/create-app-visual-studio.md
+- name: Migration
+  items:
+  - name: Upgrade to .NET 7
+    href: migration/index.md
+- name: Forms
+  items:
+  - name: Event handlers
+    href: forms/events.md
+  - name: Automatic scaling
+    href: forms/autoscale.md
+  - name: Common tasks
+    items:
+    - name: Add a form
+      href: forms/how-to-add.md
+    - name: Resize a form
+      href: forms/how-to-position-and-resize.md
+    - name: Position a form
+      href: forms/how-to-position-and-resize.md#position-with-the-designer
+- name: Controls
+  items:
+  - name: Overview
+    href: controls/overview.md
+  - name: Layout options
+    href: controls/layout.md
+  - name: Labels
+    href: controls/labels.md
+  - name: Events
+    href: controls/events.md
+  - name: Custom controls
+    href: controls/custom.md
+  - name: Custom painting and drawing
+    href: controls/custom-painting-drawing.md
+  - name: Apply accessibility information
+    href: controls/provide-accessibility-information.md
+  - name: Common tasks
+    items:
+    - name: Add a control to a form
+      href: controls/how-to-add-to-a-form.md
+    - name: Create access key shortcuts
+      href: controls/how-to-create-access-keys.md
+    - name: Set the text displayed by a control
+      href: controls/how-to-set-the-display-text.md
+    - name: Set the the tab order of a control
+      href: controls/how-to-set-the-tab-order.md
+    - name: Dock and anchor controls
+      href: controls/how-to-dock-and-anchor.md
+    - name: Set the image displayed by a control
+      href: controls/how-to-add-a-picture-to-a-control.md
+    - name: Add or remove event handlers
+      href: controls/how-to-add-an-event-handler.md
+    - name: Make thread-safe calls to controls
+      href: controls/how-to-make-thread-safe-calls.md
+- name: Custom controls
+  items:
+  - name: Overview
+    href: controls-design/overview.md
+  - name: Extend an existing control
+    href: controls-design/extend-existing.md
+  - name: User controls
+    expanded: true
+    items:
+    - name: Overview
+      href: controls-design/usercontrol-overview.md
+#    - name: Constituent controls (X)
+#      href: blah
+#    - name: "Tutorial: Create a user control (X)" 
+#      href: blah
+    - name: Common tasks
+      items:
+      - name: How to create a user control
+        href: controls-design/how-to-create-usercontrol.md
+#  - name: User-drawn controls
+#    items:
+#    - name: Overview (X)
+#      href: blah
+#    - name: Rendering an interface with OnPaint (X)
+#      href: blah
+#    - name: "Tutorial: Create a new progress control (X)"
+#      href: blah
+#    - name: Common tasks
+#      items:
+#      - name: Create a simple control (X)
+#        href: blah
+  - name: Visual Studio designer support
+    expanded: true
+    items:
+    - name: Overview
+      href: controls-design/designer-overview.md
+    - name: Designer changes from .NET Framework
+      href: controls-design/designer-differences-framework.md
+#    - name: Designer attributes (X)
+#      href: blah
+#    - name: Troubleshoot designer errors (X)
+#      href: blah
+#    - name: Common tasks
+#      items:
+#      - name: Manage control properties set by the designer (X)
+#        href: blah
+#      - name: Provide an image for the toolbox (X)
+#        href: blah
+- name: User input - keyboard
+  items:
+  - name: Overview
+    href: input-keyboard/overview.md
+  - name: Use keyboard events
+    href: input-keyboard/events.md
+  - name: Validate input
+    href: input-keyboard/validation.md
+  - name: Common tasks
+    items:
+    - name: Change the pressed key
+      href: input-keyboard/how-to-change-key-press.md
+    - name: Determine which modifier key is pressed
+      href: input-keyboard/how-to-check-modifier-key.md
+    - name: Handle input at the form level
+      href: input-keyboard/how-to-handle-forms.md
+    - name: Simulate keyboard events
+      href: input-keyboard/how-to-simulate-events.md
+- name: User input - mouse
+  items:
+  - name: Overview
+    href: input-mouse/overview.md
+  - name: Use mouse events
+    href: input-mouse/events.md
+  - name: Drag-and-drop functionality
+    href: input-mouse/drag-and-drop.md
+  - name: Common tasks
+    items:
+    - name: Distinguish between clicks and double-clicks
+      href: input-mouse/how-to-distinguish-between-clicks-and-double-clicks.md
+    - name: Control and modify the mouse pointer
+      href: input-mouse/how-to-manage-cursor-pointer.md
+    - name: Simulate mouse events
+      href: input-mouse/how-to-simulate-events.md
+- name: Printing
+  items:
+  - name: Overview
+    href: printing/overview.md
+  - name: Common tasks
+    items:
+    - name: Print a text document
+      href: printing/how-to-print-text-document.md
+    - name: Print a form
+      href: printing/how-to-print-windows-form.md
+    - name: Use print preview
+      href: printing/how-to-print-in-windows-forms-using-print-preview.md
+- name: Data binding
+  items:
+  - name: Overview
+    href: data/overview.md
+  - name: Design great data sources
+    href: data/design-great-data-sources.md
+  - name: Work with a data grid
+    href: data/how-to-work-with-data-grid.md
+  - name: Common tasks
+    items:
+    - name: Create a control binding
+      href: data/how-to-create-control-binding.md
+    - name: Synchronize multiple controls
+      href: data/how-to-synchronize-multiple-controls.md
+- name: WFDEV warnings
+  items:
+  - name: Overview
+    href: wfdev-diagnostics/obsoletions-overview.md
+    displayName: wfdev warnings
+  - name: WFDEV001
+    href: wfdev-diagnostics/wfdev001.md
+  - name: WFDEV002
+    href: wfdev-diagnostics/wfdev002.md
+  - name: WFDEV003
+    href: wfdev-diagnostics/wfdev003.md
+ 
