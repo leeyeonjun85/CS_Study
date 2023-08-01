@@ -34,6 +34,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MainForm", "MainForm\MainFo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore_SQLite_WinForms", "EFCore_SQLite_WinForms\EFCore_SQLite_WinForms.csproj", "{81F5CF8A-3D71-4508-9373-B704AA68DB8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThisCS_Chpter_05", "ThisCS_Chpter_05\ThisCS_Chpter_05.csproj", "{B7DC57D9-4454-4784-9A4C-FE8EAF97E045}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,6 +94,10 @@ Global
 		{81F5CF8A-3D71-4508-9373-B704AA68DB8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81F5CF8A-3D71-4508-9373-B704AA68DB8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81F5CF8A-3D71-4508-9373-B704AA68DB8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7DC57D9-4454-4784-9A4C-FE8EAF97E045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7DC57D9-4454-4784-9A4C-FE8EAF97E045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7DC57D9-4454-4784-9A4C-FE8EAF97E045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7DC57D9-4454-4784-9A4C-FE8EAF97E045}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
