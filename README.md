@@ -236,7 +236,7 @@ Update-Database
 
 
 
-## Names
+## WPF_Names
 ### 자습서: .NET을 사용하여 새 WPF 앱 만들기
 https://learn.microsoft.com/ko-kr/dotnet/desktop/wpf/get-started/create-app-visual-studio?view=netdesktop-7.0
 
