@@ -36,7 +36,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore_SQLite_WinForms", "E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThisCS", "ThisCS\ThisCS.csproj", "{75901772-9D73-40B3-B87B-DC9BF07CA1D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_HelloWPFApp", "WPF_HelloWPFApp\WPF_HelloWPFApp.csproj", "{54770409-2C6F-4D62-8738-9F80B3416A0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_HelloWPFApp", "WPF_HelloWPFApp\WPF_HelloWPFApp.csproj", "{54770409-2C6F-4D62-8738-9F80B3416A0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfirmedPublish", "solace-samples-dotnet-master\src\ConfirmedDelivery\ConfirmedPublish.csproj", "{4C553644-9955-4DC1-A7C3-1383AEED36FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicSubscriber", "solace-samples-dotnet-master\src\TopicSubscriber\TopicSubscriber.csproj", "{708D405A-EBEF-46A3-B58F-CC6350A60763}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solace_DX_WinForms", "Solace_DX_WinForms\Solace_DX_WinForms.csproj", "{A7D0C1A8-24F4-4882-9EB9-F3988A704275}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -104,6 +110,18 @@ Global
 		{54770409-2C6F-4D62-8738-9F80B3416A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54770409-2C6F-4D62-8738-9F80B3416A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54770409-2C6F-4D62-8738-9F80B3416A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C553644-9955-4DC1-A7C3-1383AEED36FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C553644-9955-4DC1-A7C3-1383AEED36FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C553644-9955-4DC1-A7C3-1383AEED36FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C553644-9955-4DC1-A7C3-1383AEED36FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{708D405A-EBEF-46A3-B58F-CC6350A60763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{708D405A-EBEF-46A3-B58F-CC6350A60763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{708D405A-EBEF-46A3-B58F-CC6350A60763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{708D405A-EBEF-46A3-B58F-CC6350A60763}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7D0C1A8-24F4-4882-9EB9-F3988A704275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D0C1A8-24F4-4882-9EB9-F3988A704275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D0C1A8-24F4-4882-9EB9-F3988A704275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7D0C1A8-24F4-4882-9EB9-F3988A704275}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
