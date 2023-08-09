@@ -44,6 +44,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicSubscriber", "solace-s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solace_DX_WinForms", "Solace_DX_WinForms\Solace_DX_WinForms.csproj", "{A7D0C1A8-24F4-4882-9EB9-F3988A704275}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{D9D7C419-CE49-4D80-B654-57F86FDE6D6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -122,6 +124,10 @@ Global
 		{A7D0C1A8-24F4-4882-9EB9-F3988A704275}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7D0C1A8-24F4-4882-9EB9-F3988A704275}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7D0C1A8-24F4-4882-9EB9-F3988A704275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9D7C419-CE49-4D80-B654-57F86FDE6D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9D7C419-CE49-4D80-B654-57F86FDE6D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9D7C419-CE49-4D80-B654-57F86FDE6D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9D7C419-CE49-4D80-B654-57F86FDE6D6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
