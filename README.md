@@ -223,6 +223,7 @@ Update-Database
 ### NuGet
 ```bash
 Install-Package SolaceSystems.Solclient.Messaging
+Install-Package Microsoft.Extensions.Hosting
 ```
 
 

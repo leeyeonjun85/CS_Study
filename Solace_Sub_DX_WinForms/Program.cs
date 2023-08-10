@@ -1,12 +1,7 @@
-﻿using DevExpress.LookAndFeel;
-using DevExpress.Skins;
-using DevExpress.UserSkins;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Windows.Forms;
 
-namespace Solace_DX_WinForms
+namespace Solace_Sub_DX_WinForms
 {
     internal static class Program
     {
@@ -18,7 +13,7 @@ namespace Solace_DX_WinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new SubForm());
         }
     }
 }
