@@ -136,23 +136,28 @@ namespace Tutorial
         #region Main
         static void Main(string[] args)
         {
-            if (args.Length < 3)
-            {
-                Console.WriteLine("Usage: QueueProducer <host> <username>@<vpnname> <password>");
-                Environment.Exit(1);
-            }
+            //if (args.Length < 3)
+            //{
+            //    Console.WriteLine("Usage: QueueProducer <host> <username>@<vpnname> <password>");
+            //    Environment.Exit(1);
+            //}
 
-            string[] split = args[1].Split('@');
-            if (split.Length != 2)
-            {
-                Console.WriteLine("Usage: QueueProducer <host> <username>@<vpnname> <password>");
-                Environment.Exit(1);
-            }
+            //string[] split = args[1].Split('@');
+            //if (split.Length != 2)
+            //{
+            //    Console.WriteLine("Usage: QueueProducer <host> <username>@<vpnname> <password>");
+            //    Environment.Exit(1);
+            //}
 
-            string host = args[0]; // Solace messaging router host name or IP address
-            string username = split[0];
-            string vpnname = split[1];
-            string password = args[2];
+            //string host = args[0]; // Solace messaging router host name or IP address
+            //string username = split[0];
+            //string vpnname = split[1];
+            //string password = args[2];
+
+            string host = "192.168.10.124";
+            string username = "testUser";
+            string vpnname = "testVPN";
+            string password = "1234";
 
             // Initialize Solace Systems Messaging API with logging to console at Warning level
             ContextFactoryProperties cfp = new ContextFactoryProperties()
