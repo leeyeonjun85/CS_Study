@@ -44,13 +44,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicSubscriber", "solace-s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicPublisher", "solace-samples-dotnet-master\src\TopicPublisher\TopicPublisher.csproj", "{E5380C09-A227-44F7-A7D1-FF7A2A0BEF56}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solace_Sub_DX_WinForms", "Solace_Sub_DX_WinForms\Solace_Sub_DX_WinForms.csproj", "{4EF27C50-8D6E-4139-9BFA-818A537631CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPattern_Factory1", "DesignPattern_Factory1\DesignPattern_Factory1.csproj", "{74498DBB-33DC-46E7-9A7F-EE20776A9071}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solace_Pub_DX_WinForms", "Solace_Pub_DX_WinForms\Solace_Pub_DX_WinForms.csproj", "{49069656-B9D7-49EC-BC0C-3D6D1AA0A783}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern_Factory1", "DesignPattern_Factory1\DesignPattern_Factory1.csproj", "{74498DBB-33DC-46E7-9A7F-EE20776A9071}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern_Factory2", "DesignPattern_Factory2\DesignPattern_Factory2.csproj", "{E2A06871-0E8C-455F-8AC1-0FB648E12749}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPattern_Factory2", "DesignPattern_Factory2\DesignPattern_Factory2.csproj", "{E2A06871-0E8C-455F-8AC1-0FB648E12749}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicToQueueMapping", "solace-samples-dotnet-master\src\TopicToQueueMapping\TopicToQueueMapping.csproj", "{233A9E0B-14F8-40BA-94D3-C52B97CBB7E9}"
 EndProject
@@ -136,14 +132,6 @@ Global
 		{E5380C09-A227-44F7-A7D1-FF7A2A0BEF56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5380C09-A227-44F7-A7D1-FF7A2A0BEF56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5380C09-A227-44F7-A7D1-FF7A2A0BEF56}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4EF27C50-8D6E-4139-9BFA-818A537631CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4EF27C50-8D6E-4139-9BFA-818A537631CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4EF27C50-8D6E-4139-9BFA-818A537631CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4EF27C50-8D6E-4139-9BFA-818A537631CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{49069656-B9D7-49EC-BC0C-3D6D1AA0A783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{49069656-B9D7-49EC-BC0C-3D6D1AA0A783}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49069656-B9D7-49EC-BC0C-3D6D1AA0A783}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49069656-B9D7-49EC-BC0C-3D6D1AA0A783}.Release|Any CPU.Build.0 = Release|Any CPU
 		{74498DBB-33DC-46E7-9A7F-EE20776A9071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{74498DBB-33DC-46E7-9A7F-EE20776A9071}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74498DBB-33DC-46E7-9A7F-EE20776A9071}.Release|Any CPU.ActiveCfg = Release|Any CPU
