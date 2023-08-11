@@ -108,12 +108,14 @@ namespace Tutorial
             using (IMessage requestMessage = args.Message)
             {
                 // Expecting the request content as a binary attachment
-                Console.WriteLine("Request content: {0}", Encoding.ASCII.GetString(requestMessage.BinaryAttachment));
+                //Console.WriteLine("Request content: {0}", Encoding.ASCII.GetString(requestMessage.BinaryAttachment));
+                Console.WriteLine("Request content: {0}", Encoding.Unicode.GetString(requestMessage.BinaryAttachment));
                 // Create reply message
                 using (IMessage replyMessage = ContextFactory.Instance.CreateMessage())
                 {
                     // Set the reply content as a binary attachment 
-                    replyMessage.BinaryAttachment = Encoding.ASCII.GetBytes("Sample Reply");
+                    //replyMessage.BinaryAttachment = Encoding.ASCII.GetBytes("Sample Reply");
+                    replyMessage.BinaryAttachment = Encoding.Unicode.GetBytes("샘플 응답입니다.");
                     Console.WriteLine("Sending reply...");
                     ReturnCode returnCode = Session.SendReply(requestMessage, replyMessage);
                     if (returnCode == ReturnCode.SOLCLIENT_OK)
@@ -157,23 +159,28 @@ namespace Tutorial
         #region Main
         static void Main(string[] args)
         {
-            if (args.Length < 3)
-            {
-                Console.WriteLine("Usage: BasicReplier <host> <username>@<vpnname> <password>");
-                Environment.Exit(1);
-            }
+            //if (args.Length < 3)
+            //{
+            //    Console.WriteLine("Usage: BasicReplier <host> <username>@<vpnname> <password>");
+            //    Environment.Exit(1);
+            //}
 
-            string[] split = args[1].Split('@');
-            if (split.Length != 2)
-            {
-                Console.WriteLine("Usage: BasicReplier <host> <username>@<vpnname> <password>");
-                Environment.Exit(1);
-            }
+            //string[] split = args[1].Split('@');
+            //if (split.Length != 2)
+            //{
+            //    Console.WriteLine("Usage: BasicReplier <host> <username>@<vpnname> <password>");
+            //    Environment.Exit(1);
+            //}
 
-            string host = args[0]; // Solace messaging router host name or IP address
-            string username = split[0];
-            string vpnname = split[1];
-            string password = args[2];
+            //string host = args[0]; // Solace messaging router host name or IP address
+            //string username = split[0];
+            //string vpnname = split[1];
+            //string password = args[2];
+
+            string host = "192.168.10.124";
+            string username = "testUser";
+            string vpnname = "testVPN";
+            string password = "1234";
 
             // Initialize Solace Systems Messaging API with logging to console at Warning level
             ContextFactoryProperties cfp = new ContextFactoryProperties()

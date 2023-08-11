@@ -219,12 +219,7 @@ Update-Database
 
 
 
-## Solace_WinForms
-### NuGet
-```bash
-Install-Package SolaceSystems.Solclient.Messaging
-Install-Package Microsoft.Extensions.Hosting
-```
+
 
 
 

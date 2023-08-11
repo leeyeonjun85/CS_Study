@@ -54,6 +54,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QueueProducer", "solace-sam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QueueConsumer", "solace-samples-dotnet-master\src\QueueConsumer\QueueConsumer.csproj", "{352F9780-3E03-4D9E-812D-5B723C996795}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicReplier", "solace-samples-dotnet-master\src\BasicReplier\BasicReplier.csproj", "{63590344-675F-4C6C-87CC-F96DF8A70E86}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicRequestor", "solace-samples-dotnet-master\src\BasicRequestor\BasicRequestor.csproj", "{2055669C-1EA5-4B03-BAC3-3CD4052FCD4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -152,6 +156,14 @@ Global
 		{352F9780-3E03-4D9E-812D-5B723C996795}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{352F9780-3E03-4D9E-812D-5B723C996795}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{352F9780-3E03-4D9E-812D-5B723C996795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63590344-675F-4C6C-87CC-F96DF8A70E86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63590344-675F-4C6C-87CC-F96DF8A70E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63590344-675F-4C6C-87CC-F96DF8A70E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63590344-675F-4C6C-87CC-F96DF8A70E86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2055669C-1EA5-4B03-BAC3-3CD4052FCD4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2055669C-1EA5-4B03-BAC3-3CD4052FCD4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2055669C-1EA5-4B03-BAC3-3CD4052FCD4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2055669C-1EA5-4B03-BAC3-3CD4052FCD4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -99,7 +99,8 @@ namespace Tutorial
             {
                 requestMessage.Destination = ContextFactory.Instance.CreateTopic("tutorial/requests");
                 // Create the request content as a binary attachment
-                requestMessage.BinaryAttachment = Encoding.ASCII.GetBytes("Sample Request");
+                //requestMessage.BinaryAttachment = Encoding.ASCII.GetBytes("Sample Request");
+                requestMessage.BinaryAttachment = Encoding.Unicode.GetBytes("샘플 요청입니다.");
 
                 // Send the request message to the Solace messaging router
                 IMessage replyMessage = null;
@@ -108,7 +109,8 @@ namespace Tutorial
                 if (returnCode == ReturnCode.SOLCLIENT_OK)
                 {
                     // Expecting reply as a binary attachment
-                    reply = Encoding.ASCII.GetString(replyMessage.BinaryAttachment);
+                    //reply = Encoding.ASCII.GetString(replyMessage.BinaryAttachment);
+                    reply = Encoding.Unicode.GetString(replyMessage.BinaryAttachment);
                 }
                 else
                 {
@@ -121,24 +123,29 @@ namespace Tutorial
         #region Main
         static void Main(string[] args)
         {
-            if (args.Length < 3)
-            {
-                Console.WriteLine("Usage: BasicRequestor <host> <username>@<vpnname> <password>");
-                Environment.Exit(1);
-            }
+            //if (args.Length < 3)
+            //{
+            //    Console.WriteLine("Usage: BasicRequestor <host> <username>@<vpnname> <password>");
+            //    Environment.Exit(1);
+            //}
 
-            string[] split = args[1].Split('@');
-            if (split.Length != 2)
-            {
-                Console.WriteLine("Usage: BasicRequestor <host> <username>@<vpnname> <password>");
-                Environment.Exit(1);
-            }
+            //string[] split = args[1].Split('@');
+            //if (split.Length != 2)
+            //{
+            //    Console.WriteLine("Usage: BasicRequestor <host> <username>@<vpnname> <password>");
+            //    Environment.Exit(1);
+            //}
 
-            string host = args[0]; // Solace messaging router host name or IP address
-            string username = split[0];
-            string vpnname = split[1];
-            string password = args[2];
+            //string host = args[0]; // Solace messaging router host name or IP address
+            //string username = split[0];
+            //string vpnname = split[1];
+            //string password = args[2];
             const int defaultTimeoutSeconds = 10; // request timeout
+
+            string host = "192.168.10.124";
+            string username = "testUser";
+            string vpnname = "testVPN";
+            string password = "1234";
 
             // Initialize Solace Systems Messaging API with logging to console at Warning level
             ContextFactoryProperties cfp = new ContextFactoryProperties()

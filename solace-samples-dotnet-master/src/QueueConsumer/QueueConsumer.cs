@@ -86,6 +86,7 @@ namespace Tutorial
 
                 // Provision the queue
                 string queueName = "Q/tutorial";
+                //string queueName = "Q/tutorial/topicToQueueMapping";
                 Console.WriteLine("Attempting to provision the queue '{0}'...", queueName);
 
                 // Set queue permissions to "consume" and access-type to "exclusive"
