@@ -251,3 +251,12 @@ Install-Package Oracle.EntityFrameworkCore
 - [Visual Studio 자습서 C#](https://learn.microsoft.com/ko-kr/visualstudio/get-started/csharp/?view=vs-2022)
 - [자습서: Visual Studio를 사용하여 .NET 콘솔 애플리케이션 만들기](https://learn.microsoft.com/ko-kr/dotnet/core/tutorials/with-visual-studio?pivots=dotnet-7-0)
 
+
+
+## WPF_EFCore_GetStartedWPF
+### WPF 시작
+https://learn.microsoft.com/ko-kr/ef/core/get-started/wpf
+
+### NuGet
+Install-Package Microsoft.EntityFrameworkCore.Sqlite
+Install-Package Microsoft.EntityFrameworkCore.Proxies
