@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_Tutorial_EventBubblingTunneling
+namespace EventBasic
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -33,6 +33,12 @@ namespace WPF_Tutorial_EventBubblingTunneling
             ClearList();
         }
 
+        private void SettunnelingTextBox()
+        {
+            txtTunneling.Text = string.Join(" > ", list);
+            ClearList();
+        }
+
         private async void ClearList()
         {
             await Task.Delay(100);
@@ -47,14 +53,36 @@ namespace WPF_Tutorial_EventBubblingTunneling
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            list.Add("Button-Blue");
+            list.Add("Border-Blue");
             SetBubblingTextBox();
+            // 버블링 중간에 끊기
+            //e.Handled = true;
         }
 
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            list.Add("Button-Red");
+            list.Add("Rectangle-Red");
             SetBubblingTextBox();
+        }
+
+        private void Button_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            list.Add("Button-Gray");
+            SettunnelingTextBox();
+            // 터널링 중간에 끊기
+            //e.Handled = true;
+        }
+
+        private void Border_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            list.Add("Border-Blue");
+            SettunnelingTextBox();
+        }
+
+        private void Rectangle_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            list.Add("Rectangle-Red");
+            SettunnelingTextBox();
         }
     }
 }
