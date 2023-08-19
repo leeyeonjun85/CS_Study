@@ -260,3 +260,10 @@ https://learn.microsoft.com/ko-kr/ef/core/get-started/wpf
 ### NuGet
 Install-Package Microsoft.EntityFrameworkCore.Sqlite
 Install-Package Microsoft.EntityFrameworkCore.Proxies
+
+
+
+
+
+
+Install-Package Microsoft.AspNetCore.SignalR.Client
