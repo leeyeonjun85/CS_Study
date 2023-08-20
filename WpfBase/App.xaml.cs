@@ -2,20 +2,20 @@
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Wpf_Chat.Services;
-using Wpf_Chat.ViewModels;
-using Wpf_Chat.Views;
+using WpfBase.Services;
+using WpfBase.ViewModels;
+using WpfBase.Views;
 
-namespace Wpf_Chat
+namespace WpfBase
 {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
-        private readonly IServiceProvider _services = default!;
+        private IServiceProvider _services = default!;
 
-        private static IServiceProvider ConfigurationService()
+        private IServiceProvider ConfigurationService()
         {
             HostApplicationBuilder builder = Host.CreateApplicationBuilder();
 
@@ -25,7 +25,6 @@ namespace Wpf_Chat
 
             // Services
             builder.Services.AddSingleton<IViewService, ViewService>();
-            builder.Services.AddSingleton<ISignalRControl, SignalRControl>();
 
             // ViewModels
             builder.Services.AddSingleton<MainViewModel>();

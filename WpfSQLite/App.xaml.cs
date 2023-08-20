@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Windows;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Wpf_Chat.Services;
-using Wpf_Chat.ViewModels;
-using Wpf_Chat.Views;
+using WpfSQLite.Models;
+using WpfSQLite.Services;
+using WpfSQLite.ViewModels;
+using WpfSQLite.Views;
 
-namespace Wpf_Chat
+namespace WpfSQLite
 {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
-        private readonly IServiceProvider _services = default!;
+        private IServiceProvider _services = default!;
 
-        private static IServiceProvider ConfigurationService()
+        private IServiceProvider ConfigurationService()
         {
             HostApplicationBuilder builder = Host.CreateApplicationBuilder();
 
@@ -25,11 +27,14 @@ namespace Wpf_Chat
 
             // Services
             builder.Services.AddSingleton<IViewService, ViewService>();
-            builder.Services.AddSingleton<ISignalRControl, SignalRControl>();
 
             // ViewModels
             builder.Services.AddSingleton<MainViewModel>();
             builder.Services.AddTransient<SubViewModel>();
+
+            // DbContext
+            builder.Services.AddDbContext<ModelContext>(options
+                => options.UseSqlite("Data Source=WpfSQLite.db"));
 
             IHost host = builder.Build();
             return host.Services;

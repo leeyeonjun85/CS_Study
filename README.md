@@ -265,5 +265,38 @@ Install-Package Microsoft.EntityFrameworkCore.Proxies
 
 
 
+## Wpf_Chat
 
+
+### NuGet
 Install-Package Microsoft.AspNetCore.SignalR.Client
+Install-Package Microsoft.AspNetCore.Components
+Install-Package CommunityToolkit.Mvvm
+Install-Package Microsoft.Extensions.Hosting
+
+
+## WpfBase
+Install-Package CommunityToolkit.Mvvm
+Install-Package Microsoft.Extensions.Hosting
+
+- NameSpace 확인 : WpfBase
+- 폴더 복사
+    - `Models, Services, ViewModels, Views`
+    - 네임스페이스 수정
+- App.xaml
+    - `StartupUri="MainWindow.xaml"` 삭제
+- App.xaml.cs
+    - `public partial class App : Application` 클래스 모두 대체
+
+
+## WpfSQLite
+Install-Package Microsoft.EntityFrameworkCore.Sqlite
+Install-Package CommunityToolkit.Mvvm
+Install-Package Microsoft.Extensions.Hosting
+
+
+
+Install-Package Microsoft.EntityFrameworkCore.Proxies
+Install-Package Microsoft.EntityFrameworkCore.Sqlite
+
+
