@@ -13,10 +13,14 @@
             <Setter Property="Margin" Value="3"/>
         </Style>
         <Style TargetType="{x:Type TextBox}">
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="22"/>
             <Setter Property="Margin" Value="3"/>
-            <Setter Property="Height" Value="30"/>
+            <Setter Property="Height" Value="36"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="StatusBarTextBlock" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="3"/>
         </Style>
         <Style TargetType="{x:Type Label}">
             <Setter Property="FontSize" Value="16"/>
@@ -24,7 +28,10 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
         <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="FontSize" Value="22"/>
             <Setter Property="Margin" Value="3"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
     </Window.Resources>
     <Grid>
@@ -35,6 +42,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -69,14 +77,24 @@
         <ComboBox 
             Grid.Row="1" 
             ItemsSource="{Binding CategoryNameList}"
+            SelectedValue="{Binding SelectedCategory}"
             Name="cmbbxCategoryNameList"/>
         <TextBox 
             Grid.Row="1" Grid.Column="1"
-            Text="{Binding InserProduct}"
+            Text="{Binding InsertProduct}"
             Name="txtbxInsertProduct"/>
         <Button 
             Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="2"
-            Content="Insert" />
+            Content="Insert"
+            CommandParameter="{Binding ElementName=txtbxInsertProduct}"
+            Command="{Binding InsertCommand}"
+            Name="btnInsert"/>
+
+        <Button 
+            Grid.Row="4" Grid.Column="0"  Grid.ColumnSpan="2"
+            Content="Save"
+            Command="{Binding SaveChangesDataGridCommand}"
+            Name="btnSave"/>
 
 
         <!--<DataGrid 
@@ -99,14 +117,14 @@
         </DataGrid>-->
         <DataGrid 
             Grid.Row="1" Grid.Column="2"
-            Grid.RowSpan="3" Grid.ColumnSpan="2"
-            x:Name="productsDataGrid" 
+            Grid.RowSpan="5" Grid.ColumnSpan="2"
             AutoGenerateColumns="False" 
-            EnableRowVirtualization="True" 
+            EnableRowVirtualization="False" 
             ItemsSource="{Binding ProductList}" 
             Margin="5" 
             RowDetailsVisibilityMode="VisibleWhenSelected" 
-            RenderTransformOrigin="0.488,0.251">
+            RenderTransformOrigin="0.488,0.251"
+            x:Name="productsDataGrid" >
             <DataGrid.Columns>
                 <DataGridTextColumn 
                     Binding="{Binding CategoryId}" 
@@ -124,7 +142,50 @@
                     Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
+        
+        <StatusBar
+            Grid.Row="6" Grid.Column="0"
+            Grid.RowSpan="1" Grid.ColumnSpan="4">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+
+            <StatusBarItem>
+                <TextBlock
+                    Style="{StaticResource StatusBarTextBlock}"
+                    Text="{Binding StatusBar1}"
+                    Name="StatusBar1" />
+            </StatusBarItem>
+            <Separator Grid.Column="1" />
+            <StatusBarItem Grid.Column="2">
+                <TextBlock
+                    Style="{StaticResource StatusBarTextBlock}"
+                    Text="WPF SQLite MVVN" />
+            </StatusBarItem>
+            <Separator Grid.Column="3" />
+            <StatusBarItem Grid.Column="4">
+                <ProgressBar
+                    Value="{Binding StatusBarProgressBar}" 
+                    Width="90" 
+                    Height="16" />
+            </StatusBarItem>
+        </StatusBar>
+
+
 
     </Grid>
+
     
+
+
 </Window>
