@@ -1,15 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.SignalR.Client;
 
 namespace Wpf_Chat.Services
 {
     public interface ISignalRControl
     {
-        bool isConnected { get; set; }
-        bool IsConnected { get; }
-        List<string> Messages { get; set; }
+        string Messages { get; set; }
 
-        Task Connect(string serverAddress);
+        HubConnection Connect(string serverAddress = "https://localhost:7076/chathub");
         Task Send(string userInput, string messageInput);
     }
 }

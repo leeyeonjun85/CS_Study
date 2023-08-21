@@ -1,61 +1,111 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Configuration;
+using Wpf_Chat.Models;
 using Wpf_Chat.Services;
 
 namespace Wpf_Chat.ViewModels
 {
     public partial class MainViewModel : ViewModelBase
     {
+        #region Private Field
         private readonly IViewService _viewService;
         private readonly ISignalRControl _signalRControl;
-        public IConfiguration _configuration;
-        private HubConnection? hubConnection;
+        private readonly IConfiguration _configuration;
+        private HubConnection? _hubConnection;
+        #endregion
 
-        public ICommand ShowSubViewCommand => new RelayCommand<object>(ShowSubView);
-        public ICommand ConnectServerCommand => new RelayCommand<object>(ConnectServer);
 
-        public string? Value1 { get; set; } = string.Empty;
-        public string? Value2 { get; set; } = string.Empty;
-        public string? Value3 { get; set; } = string.Empty;
-        public string? Value4 { get; set; } = string.Empty;
-        public string? NickName { get; set; } = string.Empty;
-        public ObservableCollection<string> LogList { get; set; }
+        #region Bingding Members
+        public string SignalRHost
+        {
+            get { return _signalRHost; }
+            set { SetProperty(ref _signalRHost, value); }
+        }
+        private string _signalRHost = string.Empty;
+        public string SignalRVPN
+        {
+            get { return _signalRVPN; }
+            set { SetProperty(ref _signalRVPN, value); }
+        }
+        private string _signalRVPN = string.Empty;
+        public string SignalRUser
+        {
+            get { return _signalRUser; }
+            set { SetProperty(ref _signalRUser, value); }
+        }
+        private string _signalRUser = string.Empty;
+        public string SignalRPassword
+        {
+            get { return _signalRPassword; }
+            set { SetProperty(ref _signalRPassword, value); }
+        }
+        private string _signalRPassword = string.Empty;
+        public string NickName
+        {
+            get { return _nickName; }
+            set { SetProperty(ref _nickName, value); }
+        }
+        private string _nickName = string.Empty;
+        public string StatusBar1
+        {
+            get { return _statusBar1; }
+            set { SetProperty(ref _statusBar1, value); }
+        }
+        private string _statusBar1 = "Status: Ready";
+        public string StatusBar2
+        {
+            get { return _statusBar2; }
+            set { SetProperty(ref _statusBar2, value); }
+        }
+        private string _statusBar2 = "Please Connect Server first!";
+        #endregion
 
+        #region Constructor
         public MainViewModel(
             ISignalRControl signalRControl,
             IViewService viewService,
             IConfiguration configuration)
         {
+            // 서비스 준비
             _viewService = viewService;
-            _configuration = configuration;
             _signalRControl = signalRControl;
 
+            // appsettings.josn
+            _configuration = configuration;
             IConfigurationSection SignalRConfig = configuration.GetSection("SignalRConfig");
             IConfigurationSection MyProfile = configuration.GetSection("MyProfile");
-            Value1 = SignalRConfig["Server"];
-            Value2 = SignalRConfig["VPN"];
-            Value3 = SignalRConfig["UserName"];
-            Value4 = SignalRConfig["Password"];
+            SignalRHost = SignalRConfig["Server"];
+            SignalRVPN = SignalRConfig["VPN"];
+            SignalRUser = SignalRConfig["UserName"];
+            SignalRPassword = SignalRConfig["Password"];
             NickName = MyProfile["Name"];
-
-            LogList = new ObservableCollection<string>() { "==== Log ====", "프로그램을 시작합니다." };
         }
+        #endregion
 
-        public bool IsConnected => hubConnection?.State == HubConnectionState.Connected;
+        //public bool IsConnected => _hubConnection?.State == HubConnectionState.Connected;
+
+        public void ConnectServer(object? obj)
+        {
+            _hubConnection = _signalRControl.Connect();
+        }
 
         private void ShowSubView(object? obj)
         {
             try
             {
-                //await _signalRControl.Send(Value3, (string)((TextBox)obj).Text);
-                LogList.Add($"{NickName!} 님이 채팅방에 들어갔습니다.");
-                _viewService.ShowSubView(new Models.SubData { StringData = NickName!, IntData = 123, HConnection = hubConnection });
+                var subData = new SubData()
+                {
+                    NickName = NickName,
+                    HConnection = _hubConnection,
+                };
+                _viewService.ShowSubView(subData);
             }
             catch (Exception ex)
             {
@@ -64,27 +114,13 @@ namespace Wpf_Chat.ViewModels
             }
         }
 
-        public async void ConnectServer(object? obj)
+
+        public async ValueTask DisposeAsync()
         {
-            try
+            if (_hubConnection is not null)
             {
-                //await _signalRControl.Connect(Value1!);
-                //LogList.Add($"연결 완료 : {_signalRControl.isConnected}");
-
-
-                hubConnection = new HubConnectionBuilder()
-                    //.WithUrl(serverAddress)
-                    .WithUrl(@"https://localhost:7076/chathub")
-                    .Build();
-                LogList.Add($"연결 완료 : {IsConnected}");
-
+                await _hubConnection.DisposeAsync();
             }
-            catch (Exception ex)
-            {
-                LogList.Add($"{ex.Message}{Environment.NewLine}{ex.Source}");
-                throw;
-            }
-
         }
 
         protected override void OnWindowLoaded(object sender, RoutedEventArgs e)
@@ -104,8 +140,9 @@ namespace Wpf_Chat.ViewModels
             {
                 e.Cancel = true;
             }
-
         }
 
+        public ICommand ShowSubViewCommand => new RelayCommand<object>(ShowSubView);
+        public ICommand ConnectServerCommand => new RelayCommand<object>(ConnectServer);
     }
 }

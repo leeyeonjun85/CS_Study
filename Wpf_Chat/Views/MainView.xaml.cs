@@ -7,11 +7,9 @@ namespace Wpf_Chat.Views
     /// </summary>
     public partial class MainView : Window
     {
-
         public MainView()
         {
             InitializeComponent();
-            lstbxLog.Items.Clear();
         }
     }
 }
