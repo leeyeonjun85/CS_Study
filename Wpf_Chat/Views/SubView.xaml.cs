@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using Wpf_Chat.Services;
 
 namespace Wpf_Chat.Views
 {
@@ -12,23 +13,9 @@ namespace Wpf_Chat.Views
         public SubView()
         {
             InitializeComponent();
-        }
 
-
-
-        public string MyMessage
-        {
-            get { return (string)GetValue(MyMessageProperty); }
-            set { SetValue(MyMessageProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for MyMessage.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty MyMessageProperty =
-            DependencyProperty.Register("MyMessage", typeof(string), typeof(SubView), new PropertyMetadata("테스트", MessageChanged));
-
-        private static void MessageChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            throw new NotImplementedException();
+            //SignalRControl signalR = new SignalRControl();
+            //lstbxChat.DataContext = signalR;
         }
     }
 }

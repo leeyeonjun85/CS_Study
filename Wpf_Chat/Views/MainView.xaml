@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_Chat.Views"
-        Name="MainV"
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800">
     <Window.Resources>
@@ -53,32 +52,36 @@
             Orientation="Vertical">
             <Label Content="Server IP"/>
             <TextBox
-                Text="{Binding SignalRHost}"
-                Name="txtbxServerIP"/>
+                Text="{Binding TbServerIpText}"
+                IsEnabled="{Binding TbServerIpIsEnabled}"
+                Name="tbServerIp"/>
         </StackPanel>
         <StackPanel
             Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
             Orientation="Vertical">
             <Label Content="VPN"/>
             <TextBox
-                Text="{Binding SignalRVPN}"
-                x:Name="txtbxVpn"/>
+                Text="{Binding TbVpnText}"
+                IsEnabled="{Binding TbVpnIsEnabled}"
+                x:Name="tbVpn"/>
         </StackPanel>
         <StackPanel
             Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1"
             Orientation="Vertical">
             <Label Content="User Name"/>
             <TextBox
-                Text="{Binding SignalRUser}"
-                x:Name="txtbxUserName"/>
+                Text="{Binding TbUserNameText}"
+                IsEnabled="{Binding TbUserNameIsEnabled}"
+                x:Name="tbUserName"/>
         </StackPanel>
         <StackPanel
             Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="1"
             Orientation="Vertical">
             <Label Content="Password"/>
             <TextBox
-                Text="{Binding SignalRPassword}"
-                x:Name="txtbxPassword"/>
+                Text="{Binding TbPasswordText}"
+                IsEnabled="{Binding TbPasswordIsEnabled}"
+                x:Name="tbPassword"/>
         </StackPanel>
 
         <Label
@@ -87,22 +90,21 @@
             Content="Nick Name"/>
         <TextBox
             Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
-            Text="{Binding NickName}"
-            x:Name="txtbxNickName"/>
+            Text="{Binding TbNickNameText}"
+            x:Name="tbNickName"/>
 
         <Button 
             Grid.Row="0" Grid.Column="4"
             Content="Connect" 
-            IsEnabled="{Binding BtnConnect}"
-            CommandParameter="{Binding ElementName=MainV}"
-            Command="{Binding ConnectServerCommand}"
+            IsEnabled="{Binding BtnConnectIsEnabled}"
+            Command="{Binding BtnConnectCommand}"
             Name="btnConnect"/>
         <Button 
             Grid.Row="1" Grid.Column="4"
             Content="Chat Open" 
-            IsEnabled="{Binding BtnChatOpen}"
+            IsEnabled="{Binding BtnChatOpenIsEnabled}"
             CommandParameter="{Binding ElementName=txtbxNickName}"
-            Command="{Binding ShowSubViewCommand}"
+            Command="{Binding BtnChatOpenCommand}"
             Name="btnChatOpen"/>
 
         <StatusBar
@@ -126,16 +128,16 @@
                 <TextBlock
                     Style="{StaticResource StatusBarTextBlock}"
                     d:Text="Status : 현재상태"
-                    Text="{Binding StatusBar1}"
-                    Name="StatusBar1" />
+                    Text="{Binding TbStatusBar1Text}"
+                    Name="tbStatusBar1" />
             </StatusBarItem>
             <Separator Grid.Column="1" />
             <StatusBarItem Grid.Column="2">
                 <TextBlock
                     Style="{StaticResource StatusBarTextBlock}"
                     d:Text="여러가지 메시지"
-                    Text="{Binding StatusBar2}"
-                    Name="StatusBar2" />
+                    Text="{Binding TbStatusBar2Text}"
+                    Name="tbStatusBar2" />
             </StatusBarItem>
             <Separator Grid.Column="3" />
             <StatusBarItem Grid.Column="4">

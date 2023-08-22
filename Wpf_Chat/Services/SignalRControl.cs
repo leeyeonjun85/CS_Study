@@ -3,29 +3,21 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR.Client;
+using Wpf_Chat.ViewModels;
 using Wpf_Chat.Views;
 
 namespace Wpf_Chat.Services
 {
-    public class SignalRControl : ISignalRControl
+    public class SignalRControl : ViewModelBase, ISignalRControl
     {
         private HubConnection? _hubConnection;
 
-        public SignalRControl()
+        public string Messages2
         {
-            var aaa = new SubView();
-            var bbb = aaa.MyMessage;
-
+            get { return _messages; }
+            set { SetProperty(ref _messages, value); }
         }
-
-        public string Messages { get; set; } = "채팅을 시작합니다.";
-        //public ObservableCollection<string> Messages { get; set; } = new ObservableCollection<string>();
-        //public bool isConnected { get; set; } = false;
-
-
-
-
-        //public bool IsConnected => hubConnection?.State == HubConnectionState.Connected;
+        private string _messages = "채팅을 시작합니다.222";
 
         public HubConnection Connect(string serverAddress = @"https://localhost:7076/chathub")
         {
@@ -33,17 +25,30 @@ namespace Wpf_Chat.Services
                 .WithUrl(serverAddress)
                 .Build();
 
-            _hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
-            {
-                //Messages.Add($"{user}: {message}");
-                Messages += $"{Environment.NewLine}{user} : {message}";
-            });
-
-            return _hubConnection;
+            //_hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+            //{
+            //    //Messages.Add($"{user}: {message}");
+            //    Messages += $"{Environment.NewLine}{user} : {message}";
+            //});
 
             //await hubConnection.StartAsync();
 
             //isConnected = IsConnected;
+
+            return _hubConnection;
+        }
+
+        public async void StartAsync()
+        {
+            if (_hubConnection is not null)
+            {
+                _hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+                {
+                    //Messages.Add($"{user}: {message}");
+                    Messages2 += $"{Environment.NewLine}{user} : {message}";
+                });
+                await _hubConnection.StartAsync();
+            }
         }
 
         public async Task Send(string userInput, string messageInput)

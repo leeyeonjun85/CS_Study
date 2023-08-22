@@ -22,21 +22,28 @@ namespace Wpf_Chat.ViewModels
         private HubConnection? _hubConnection;
 
         public SubData SubData { get; set; } = default!;
-        //public ObservableCollection<string> Messages
-        //{
-        //    get { return _messages; }
-        //    set { SetProperty(ref _messages, value); }
-        //}
-        //private ObservableCollection<string> _messages = new ObservableCollection<string> { "채팅을 시작합니다." };
-        ////private ObservableCollection<string> _messages;
 
         public string Messages
         {
             get { return _messages; }
             set { SetProperty(ref _messages, value); }
         }
-        private string _messages = "채팅을 시작합니다.";
-        //private string _messages;
+        private string _messages = "채팅을 시작합니다.111";
+
+        public string TbStatusBar1Text
+        {
+            get { return _tbStatusBar1Text; }
+            set { SetProperty(ref _tbStatusBar1Text, value); }
+        }
+        private string _tbStatusBar1Text = "Status: Ready";
+
+        public string TbStatusBar2Text
+        {
+            get { return _tbStatusBar2Text; }
+            set { SetProperty(ref _tbStatusBar2Text, value); }
+        }
+        private string _tbStatusBar2Text = "Please Connect Server first!";
+
 
 
         public SubViewModel(
@@ -47,7 +54,6 @@ namespace Wpf_Chat.ViewModels
             _viewService = viewService;
             _signalRControl = signalRControl;
             _configuration = configuration;
-            //_messages = _signalRControl.Messages;
         }
 
 
@@ -60,6 +66,19 @@ namespace Wpf_Chat.ViewModels
             if (_hubConnection is not null)
             {
                 _hubConnection.SendAsync("SendMessage", _nickName, ((TextBox)obj).Text);
+            }
+        }
+
+        public async void StartAsync()
+        {
+            if (_hubConnection is not null)
+            {
+                _hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+                {
+                    //Messages.Add($"{user}: {message}");
+                    Messages += $"{Environment.NewLine}{user} : {message}";
+                });
+                await _hubConnection.StartAsync();
             }
         }
 
@@ -76,26 +95,20 @@ namespace Wpf_Chat.ViewModels
         {
             _nickName = SubData.NickName;
             _hubConnection = SubData.HConnection;
+
             StartAsync();
+            //_signalRControl.StartAsync();
             //_signalRControl.Send(_nickName, "채팅방에 입장하였습니다.");
             //MessageBox.Show("SubWindow Loaded");
+
+            TbStatusBar1Text = "Status : Connected";
+            TbStatusBar2Text = "SignalR Running!";
         }
 
         protected override void OnWindowClosing(object? sender, CancelEventArgs e)
         {
             //MessageBox.Show("SubWindow Closing");
         }
-
-        public async void StartAsync()
-        {
-            //_hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
-            //{
-            //    //Messages.Add($"{user}: {message}");
-            //    Messages += $"{Environment.NewLine}{user} : {message}";
-            //});
-            await _hubConnection.StartAsync();
-        }
-
 
 
 

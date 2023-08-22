@@ -28,7 +28,7 @@ namespace Wpf_Chat.Services
 
       viewModel.SetWindow(view);
 
-      if (parameter != null && viewModel is IParameterReceiver parameterReceiver)
+      if (parameter is not null && viewModel is IParameterReceiver parameterReceiver)
       {
         parameterReceiver.ReceiveParameter(parameter);
       }
