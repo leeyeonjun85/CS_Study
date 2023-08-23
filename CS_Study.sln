@@ -66,11 +66,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorServerSignalR", "Blaz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf_Chat", "Wpf_Chat\Wpf_Chat.csproj", "{DDA5CD54-775E-41BF-B03F-6C23F0BA9C8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfBase", "WpfBase\WpfBase.csproj", "{8AA55EFA-045C-494B-97B0-1B9BE831A220}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfBase", "WpfBase\WpfBase.csproj", "{8AA55EFA-045C-494B-97B0-1B9BE831A220}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSQLite", "WpfSQLite\WpfSQLite.csproj", "{A55F3D56-7E3A-4DE9-80E2-54319C65C4D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfSQLite", "WpfSQLite\WpfSQLite.csproj", "{A55F3D56-7E3A-4DE9-80E2-54319C65C4D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetStartedWPF", "GetStartedWPF\GetStartedWPF.csproj", "{D9815540-9AC8-4FA9-96D8-F84B337674D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetStartedWPF", "GetStartedWPF\GetStartedWPF.csproj", "{D9815540-9AC8-4FA9-96D8-F84B337674D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryWatcher", "DirectoryWatcher\DirectoryWatcher.csproj", "{18EEA948-7D8D-485F-893E-F5E1F45686D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -206,6 +208,10 @@ Global
 		{D9815540-9AC8-4FA9-96D8-F84B337674D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9815540-9AC8-4FA9-96D8-F84B337674D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9815540-9AC8-4FA9-96D8-F84B337674D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18EEA948-7D8D-485F-893E-F5E1F45686D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18EEA948-7D8D-485F-893E-F5E1F45686D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18EEA948-7D8D-485F-893E-F5E1F45686D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18EEA948-7D8D-485F-893E-F5E1F45686D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
