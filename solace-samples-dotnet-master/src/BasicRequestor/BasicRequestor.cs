@@ -77,6 +77,7 @@ namespace Tutorial
             Console.WriteLine("Connecting as {0}@{1} on {2}...", UserName, VPNName, host);
             using (ISession session = context.CreateSession(sessionProps, null, null))
             {
+
                 ReturnCode returnCode = session.Connect();
                 if (returnCode == ReturnCode.SOLCLIENT_OK)
                 {
