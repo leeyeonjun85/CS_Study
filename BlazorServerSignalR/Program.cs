@@ -69,7 +69,10 @@ namespace BlazorServerSignalR
 
             app.MapFallbackToPage("/_Host");
 
-            app.Run();
+            var url = "https://192.168.10.101:7076";
+
+            //app.Run();
+            app.Run(url);
         }
     }
 }
