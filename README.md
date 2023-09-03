@@ -266,13 +266,14 @@ Install-Package Microsoft.EntityFrameworkCore.Proxies
 
 
 ## Wpf_Chat
-
-
 ### NuGet
 Install-Package Microsoft.AspNetCore.SignalR.Client
 Install-Package Microsoft.AspNetCore.Components
 Install-Package CommunityToolkit.Mvvm
 Install-Package Microsoft.Extensions.Hosting
+Install-Package MaterialDesignThemes
+
+
 
 
 ## WpfBase
@@ -298,5 +299,39 @@ Install-Package Microsoft.Extensions.Hosting
 
 Install-Package Microsoft.EntityFrameworkCore.Proxies
 Install-Package Microsoft.EntityFrameworkCore.Sqlite
+
+
+
+
+
+## BlazorServerSignalRApp
+Install-Package Microsoft.AspNetCore.SignalR.Client
+
+
+
+## Wpf_SignalR
+### NuGet
+Install-Package Microsoft.AspNetCore.SignalR.Client
+Install-Package Microsoft.AspNetCore.Components
+Install-Package CommunityToolkit.Mvvm
+Install-Package Microsoft.Extensions.Hosting
+Install-Package MaterialDesignThemes
+
+
+
+
+## Wpf_SignalR
+### NuGet
+Install-Package CommunityToolkit.Mvvm
+Install-Package Microsoft.Extensions.Hosting
+Install-Package MaterialDesignThemes
+Install-Package MongoDB.Driver
+Install-Package Google.Cloud.Firestore
+
+
+
+
+
+
 
 

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows;
+using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using WpfBase.Services;
 using WpfBase.ViewModels;
 using WpfBase.Views;
@@ -13,9 +15,9 @@ namespace WpfBase
     /// </summary>
     public partial class App : Application
     {
-        private IServiceProvider _services = default!;
+        public static ILogger? LOGGER;
 
-        private IServiceProvider ConfigurationService()
+        private IServiceProvider ConfigureServices()
         {
             HostApplicationBuilder builder = Host.CreateApplicationBuilder();
 
@@ -23,12 +25,19 @@ namespace WpfBase
             builder.Services.AddSingleton<MainView>();
             builder.Services.AddTransient<SubView>();
 
-            // Services
-            builder.Services.AddSingleton<IViewService, ViewService>();
-
             // ViewModels
             builder.Services.AddSingleton<MainViewModel>();
             builder.Services.AddTransient<SubViewModel>();
+
+            // Logging
+            builder.Services.AddLogging(x =>
+            {
+                x.AddConsole();
+                x.AddDebug();
+            });
+
+            // Services
+            builder.Services.AddSingleton<IViewService, ViewService>();
 
             IHost host = builder.Build();
             return host.Services;
@@ -36,14 +45,16 @@ namespace WpfBase
 
         public App()
         {
-            _services = ConfigurationService();
+            IServiceProvider serviceProvider = ConfigureServices();
+            Ioc.Default.ConfigureServices(serviceProvider);
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
 
-            var viewService = (IViewService)_services.GetService(typeof(IViewService))!;
+            LOGGER = (ILogger<App>)Ioc.Default.GetService(typeof(ILogger<App>))!;
+            var viewService = (IViewService)Ioc.Default.GetService(typeof(IViewService))!;
             viewService.ShowMainView();
         }
     }

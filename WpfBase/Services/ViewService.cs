@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using CommunityToolkit.Mvvm.DependencyInjection;
 using WpfBase.Models;
 using WpfBase.ViewModels;
 using WpfBase.Views;
@@ -10,19 +10,12 @@ namespace WpfBase.Services
 {
     public class ViewService : IViewService
     {
-        private readonly IServiceProvider _serviceProvider;
-
-        public ViewService(IServiceProvider serviceProvider)
-        {
-            _serviceProvider = serviceProvider;
-        }
-
         public void ShowView<TView, TViewModel>(object? parameter = null)
-         where TView : Window
-         where TViewModel : ViewModelBase
+            where TView : Window
+            where TViewModel : ViewModelBase
         {
-            ViewModelBase viewModel = (ViewModelBase)_serviceProvider.GetService(typeof(TViewModel))!;
-            Window view = (Window)_serviceProvider.GetService(typeof(TView))!;
+            ViewModelBase viewModel = (ViewModelBase)Ioc.Default.GetService(typeof(TViewModel))!;
+            Window view = (Window)Ioc.Default.GetService(typeof(TView))!;
 
             viewModel.SetWindow(view);
 
@@ -35,11 +28,6 @@ namespace WpfBase.Services
             view.Show();
         }
 
-        public void ShowMainView()
-        {
-            ShowView<MainView, MainViewModel>();
-        }
-
         private bool ActivateView<TView>() where TView : Window
         {
             IEnumerable<Window> windows = Application.Current.Windows.OfType<TView>();
@@ -49,6 +37,11 @@ namespace WpfBase.Services
                 return true;
             }
             return false;
+        }
+
+        public void ShowMainView()
+        {
+            ShowView<MainView, MainViewModel>();
         }
 
         public void ShowSubView(SubData subData)

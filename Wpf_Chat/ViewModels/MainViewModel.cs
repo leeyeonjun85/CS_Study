@@ -17,7 +17,7 @@ namespace Wpf_Chat.ViewModels
         #region Private Field
         private readonly IViewService _viewService;
         private readonly ISignalRControl _signalRControl;
-        private readonly IConfiguration _configuration;
+        private readonly IConfiguration _config;
         private HubConnection? _hubConnection;
         #endregion
 
@@ -119,21 +119,27 @@ namespace Wpf_Chat.ViewModels
         public MainViewModel(
             ISignalRControl signalRControl,
             IViewService viewService,
-            IConfiguration configuration)
+            IConfiguration config)
         {
             // 서비스 준비
             _viewService = viewService;
             _signalRControl = signalRControl;
 
             // appsettings.josn
-            _configuration = configuration;
-            IConfigurationSection SignalRConfig = _configuration.GetSection("SignalRConfig");
-            IConfigurationSection MyProfile = _configuration.GetSection("MyProfile");
+            _config = config;
+            IConfigurationSection MyProfile = _config.GetSection("MyProfile");
+            IConfigurationSection _configSignalR = _config.GetSection("AppConfiguration");
+            
+
             //TbServerIpText = SignalRConfig["Server"]!;
             //TbVpnText = SignalRConfig["VPN"]!;
             //TbUserNameText = SignalRConfig["UserName"]!;
             //TbPasswordText = SignalRConfig["Password"]!;
             TbNickNameText = MyProfile["Name"]!;
+            MyProfile["Name"] = "도토리";
+            TbNickNameText = MyProfile["Name"]!;
+
+            //ConfigurationManager.AppSettings[paramName];
 
             TbServerIpText = Properties.Settings.Default.SignalRConfig_Server;
             TbVpnText = Properties.Settings.Default.SignalRConfig_VPN;
@@ -147,7 +153,7 @@ namespace Wpf_Chat.ViewModels
         public void ConnectServer(object? obj)
         {
             _hubConnection = _signalRControl.Connect();
-            TbStatusBar1Text = "Status : Connected";
+            TbStatusBar1Text = _hubConnection.State.ToString();
             TbStatusBar2Text = "원하는 서비스를 실행해 주세요.";
             BtnConnectIsEnabled = false;
             BtnChatOpenIsEnabled = true;

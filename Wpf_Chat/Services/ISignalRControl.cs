@@ -8,7 +8,7 @@ namespace Wpf_Chat.Services
         string Messages2 { get; set; }
 
         HubConnection Connect(string serverAddress = "https://localhost:7076/chathub");
-        Task Send(string userInput, string messageInput);
+        Task Send(string user, string message);
         void StartAsync();
     }
 }

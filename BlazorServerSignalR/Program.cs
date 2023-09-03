@@ -18,9 +18,10 @@ namespace BlazorServerSignalR
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connectionString));
+                //options.UseSqlServer(connectionString));
+                options.UseSqlite($"Data Source=BlazorServerSignalR.db"));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
@@ -36,7 +37,10 @@ namespace BlazorServerSignalR
                       new[] { "application/octet-stream" });
             });
 
-            var app = builder.Build();
+            WebApplication app = builder.Build();
+
+            // 처리 파이프라인 구성의 맨 위에 있는 응답 압축 미들웨어를 사용합니다.
+            app.UseResponseCompression();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -50,28 +54,30 @@ namespace BlazorServerSignalR
                 app.UseHsts();
             }
 
-            // 처리 파이프라인 구성의 맨 위에 있는 응답 압축 미들웨어를 사용합니다.
-            app.UseResponseCompression();
+            //if (builder.Environment.IsStaging())
+            //{
+            //    builder.WebHost.UseStaticWebAssets();
+            //}
 
             app.UseHttpsRedirection();
-
             app.UseStaticFiles();
-
             app.UseRouting();
 
             app.UseAuthorization();
-
             app.MapControllers();
+
             app.MapBlazorHub();
 
             //허브를 Blazor로 매핑하기 위하여 엔드포인트를 추가
             app.MapHub<ChatHub>("/chathub");
+            app.MapHub<AttendanceCheck>("/attendanceCheck");
 
             app.MapFallbackToPage("/_Host");
 
-            var url = "https://192.168.10.101:7076";
-
             //app.Run();
+
+            var url = "https://172.30.1.45:7076";
+            url = "https://*:7076";
             app.Run(url);
         }
     }

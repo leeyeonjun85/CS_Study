@@ -19,7 +19,7 @@ namespace Wpf_Chat.Services
         }
         private string _messages = "채팅을 시작합니다.222";
 
-        public HubConnection Connect(string serverAddress = @"https://localhost:7076/chathub")
+        public HubConnection Connect(string serverAddress = @"https://172.30.1.45:7222//chatHub")
         {
             _hubConnection = new HubConnectionBuilder()
                 .WithUrl(serverAddress)

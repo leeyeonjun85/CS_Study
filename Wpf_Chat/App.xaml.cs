@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Windows;
+using CommunityToolkit.Mvvm.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Wpf_Chat.Services;
 using Wpf_Chat.ViewModels;
 using Wpf_Chat.Views;
@@ -13,11 +16,16 @@ namespace Wpf_Chat
     /// </summary>
     public partial class App : Application
     {
-        private readonly IServiceProvider _services = default!;
+        public static ILogger? LOGGER;
 
-        private static IServiceProvider ConfigurationService()
+        private static IServiceProvider ConfigureServices()
         {
             HostApplicationBuilder builder = Host.CreateApplicationBuilder();
+
+            // Configuration
+            var config = builder.Configuration.GetSection("AppConfiguration");
+
+            var serverIP = config["ServerIP"];
 
             // Views
             builder.Services.AddSingleton<MainView>();
@@ -37,14 +45,16 @@ namespace Wpf_Chat
 
         public App()
         {
-            _services = ConfigurationService();
+            IServiceProvider serviceProvider = ConfigureServices();
+            Ioc.Default.ConfigureServices(serviceProvider);
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
 
-            var viewService = (IViewService)_services.GetService(typeof(IViewService))!;
+            LOGGER = (ILogger<App>)Ioc.Default.GetService(typeof(ILogger<App>))!;
+            var viewService = (IViewService)Ioc.Default.GetService(typeof(IViewService))!;
             viewService.ShowMainView();
         }
     }
