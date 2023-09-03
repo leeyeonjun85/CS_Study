@@ -20,6 +20,8 @@ namespace BlazorServerSignalR
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 //options.UseSqlServer(connectionString));
                 options.UseSqlite($"Data Source=BlazorServerSignalR.db"));
+            builder.Services.AddDbContext<OoDbContext>(options =>
+                options.UseSqlite($"Data Source=OoDb.db"));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();

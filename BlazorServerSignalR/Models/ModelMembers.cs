@@ -5,7 +5,7 @@ using BlazorServerSignalR.Data;
 namespace BlazorServerSignalR.Models
 {
     [Table("MEMBERS")]
-    public class Members
+    public class ModelMembers
     {
         [Key]
         [Column("ID")]

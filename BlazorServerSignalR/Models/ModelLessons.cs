@@ -1,11 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using BlazorServerSignalR.Data;
 
 namespace BlazorServerSignalR.Models
 {
-    [Table("LESSON")]
-    public class Lesson
+    [Table("LESSONS")]
+    public class ModelLessons
     {
         [Key]
         [Column("ID")]
@@ -17,14 +16,20 @@ namespace BlazorServerSignalR.Models
         [Column("DATE_TIME_END")]
         public DateTime dateTimeEnd { get; set; } = DateTime.Now;
 
+        [Column("LESSON_TOPIC")]
+        public string? lessonTopic { get; set; }
+
+        [Column("ASSIGNMENT")]
+        public string? assignment { get; set; }
+
         [Column("LESSON_MEMO")]
-        public string lessonMemo { get; set; }
+        public string? lessonMemo { get; set; }
 
         [Column("MEMBER_ID")]
         [Required]
         public int memberId { get; set; }
 
         [ForeignKey("memberId")]
-        public virtual Members? member { get; set; }
+        public virtual ModelMembers? member { get; set; }
     }
 }
