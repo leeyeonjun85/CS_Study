@@ -116,6 +116,7 @@ namespace Tutorial
                     message.DeliveryMode = MessageDeliveryMode.Persistent;
                     // Create the message content as a binary attachment
                     message.BinaryAttachment = Encoding.ASCII.GetBytes("Persistent Queue Tutorial");
+                    
 
                     // Send the message to the queue on the Solace messaging router
                     Console.WriteLine("Sending message to queue {0}...", queueName);

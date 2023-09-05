@@ -61,6 +61,17 @@ namespace BlazorServerSignalR
             //    builder.WebHost.UseStaticWebAssets();
             //}
 
+
+            // 웹소켓 추가
+            //var webSocketOptions = new Microsoft.AspNetCore.Builder.WebSocketOptions
+            //{
+            //    KeepAliveInterval = TimeSpan.FromMinutes(5) // 프록시가 연결을 유지할 수 있도록 클라이언트로 "핑(ping)" 프레임을 전송하는 빈도
+            //};
+            //app.UseWebSockets(webSocketOptions);
+
+
+
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
